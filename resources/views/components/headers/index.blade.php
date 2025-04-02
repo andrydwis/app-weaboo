@@ -39,7 +39,7 @@
                     </flux:menu.item>
                     <flux:menu.separator />
                     <x-forms
-                        action=""
+                        action="{{ route('logout') }}"
                         method="POST"
                     >
                         <flux:menu.item
@@ -56,7 +56,7 @@
             <flux:button
                 variant="primary"
                 icon="arrow-right-end-on-rectangle"
-                href=""
+                href="{{ route('login') }}"
             >
                 Masuk
             </flux:button>
