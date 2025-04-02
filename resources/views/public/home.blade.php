@@ -2,9 +2,7 @@
     <x-cta />
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <a href="{{ route('public.animes.index') }}">
-            <x-cards
-                class="hover:ring-accent group relative overflow-hidden !p-0 ring-0 hover:ring-2 dark:hover:ring-white"
-            >
+            <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/anime.jpg') }}"
                     alt="anime"
@@ -24,9 +22,7 @@
             </x-cards>
         </a>
         <a href="">
-            <x-cards
-                class="hover:ring-accent group relative overflow-hidden !p-0 ring-0 hover:ring-2 dark:hover:ring-white"
-            >
+            <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/manga.jpg') }}"
                     alt="manga"
@@ -46,9 +42,7 @@
             </x-cards>
         </a>
         <a href="">
-            <x-cards
-                class="hover:ring-accent group relative overflow-hidden !p-0 ring-0 hover:ring-2 dark:hover:ring-white"
-            >
+            <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/ai.jpg') }}"
                     alt="other"
@@ -68,9 +62,7 @@
             </x-cards>
         </a>
         <a href="">
-            <x-cards
-                class="hover:ring-accent group relative overflow-hidden !p-0 ring-0 hover:ring-2 dark:hover:ring-white"
-            >
+            <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/news.jpg') }}"
                     alt="other"
@@ -90,9 +82,7 @@
             </x-cards>
         </a>
         <a href="">
-            <x-cards
-                class="hover:ring-accent group relative overflow-hidden !p-0 ring-0 hover:ring-2 dark:hover:ring-white"
-            >
+            <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/wibunity.jpg') }}"
                     alt="other"
@@ -112,9 +102,7 @@
             </x-cards>
         </a>
         <a href="">
-            <x-cards
-                class="hover:ring-accent group relative overflow-hidden !p-0 ring-0 hover:ring-2 dark:hover:ring-white"
-            >
+            <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/other.jpg') }}"
                     alt="other"

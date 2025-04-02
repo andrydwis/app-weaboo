@@ -13,13 +13,13 @@
 
     </div>
     <div
-        class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 md:w-1/3 lg:px-8">
+        class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 md:w-1/2 lg:px-8">
         <flux:heading
             level="1"
             size="xl"
             class="z-50 text-center text-2xl !font-bold !text-white lg:text-4xl"
         >
-            Nonton Anime dan Baca Manga <span class="underline">Tanpa Iklan</span>
+            Nonton Anime dan Baca Manga <br> <span class="underline">Tanpa Iklan</span>
             Cuma di Weaboo.my.id
         </flux:heading>
         <flux:modal.trigger name="search">

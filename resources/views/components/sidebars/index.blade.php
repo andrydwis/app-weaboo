@@ -16,14 +16,15 @@
         🇯🇵
     </flux:brand>
 
-    <flux:input
-        as="button"
-        placeholder="Cari anime atau manga..."
-        icon="magnifying-glass"
-        class="whitespace-nowrap"
-    />
+    <flux:modal.trigger name="search">
+        <flux:input
+            as="button"
+            placeholder="Cari..."
+            icon="magnifying-glass"
+        />
+    </flux:modal.trigger>
 
-    <flux:navlist class="gap-2">
+    <flux:navlist>
         <flux:navlist.item
             icon="home"
             iconVariant="solid"
@@ -31,13 +32,29 @@
         >
             Beranda
         </flux:navlist.item>
-        <flux:navlist.item
-            icon="play-circle"
-            iconVariant="solid"
-            href="{{ route('public.animes.index') }}"
-        >
-            Nonton Anime
-        </flux:navlist.item>
+        <flux:navlist.group heading="Anime">
+            <flux:navlist.item
+                icon="play-circle"
+                iconVariant="solid"
+                href="{{ route('public.animes.index') }}"
+            >
+                Nonton Anime
+            </flux:navlist.item>
+            <flux:navlist.item
+                icon="eye"
+                iconVariant="solid"
+                href="#"
+            >
+                Watchlist
+            </flux:navlist.item>
+            <flux:navlist.item
+                icon="clock"
+                iconVariant="solid"
+                href="#"
+            >
+                Riwayat
+            </flux:navlist.item>
+        </flux:navlist.group>
     </flux:navlist>
 
     <flux:spacer />
