@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'weaboo' => [
+        'api_url' => env('WEABOO_API_URL'),
+        'api_key' => env('WEABOO_API_KEY'),
+    ],
 ];

@@ -1,7 +1,7 @@
 <flux:sidebar
     sticky
     stashable
-    class="border-r border-zinc-200 bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-900"
+    class="w-full border-zinc-200 bg-zinc-50 lg:border-r dark:border-zinc-600 dark:bg-zinc-900"
 >
     <flux:sidebar.toggle
         class="lg:hidden"
@@ -18,9 +18,9 @@
 
     <flux:input
         as="button"
-        variant="filled"
-        placeholder="Search..."
+        placeholder="Cari anime atau manga..."
         icon="magnifying-glass"
+        class="whitespace-nowrap"
     />
 
     <flux:navlist class="gap-2">
