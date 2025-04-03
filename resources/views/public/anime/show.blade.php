@@ -5,10 +5,14 @@
             icon="home"
         />
         <flux:breadcrumbs.item href="{{ route('public.animes.index') }}">
-            Nonton Anime
+            <span class="line-clamp-1 whitespace-nowrap">
+                Nonton Anime
+            </span>
         </flux:breadcrumbs.item>
         <flux:breadcrumbs.item>
-            {{ $anime['title'] }}
+            <span class="line-clamp-1">
+                {{ $anime['title'] }}
+            </span>
         </flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
@@ -27,9 +31,7 @@
                 >
                     Mulai Nonton
                 </flux:button>
-                <flux:button icon="eye">
-                    Tambah ke Watchlist
-                </flux:button>
+                <livewire:anime-watchlist :anime="$anime" />
             </div>
             <div class="flex flex-col gap-4 md:col-span-3">
                 <div class="flex flex-col">

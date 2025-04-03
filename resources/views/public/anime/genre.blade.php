@@ -5,10 +5,14 @@
             icon="home"
         />
         <flux:breadcrumbs.item href="{{ route('public.animes.index') }}">
-            Nonton Anime
+            <span class="line-clamp-1 whitespace-nowrap">
+                Nonton Anime
+            </span>
         </flux:breadcrumbs.item>
         <flux:breadcrumbs.item>
-            Genre {{ str()->title($genre) }}
+            <span class="line-clamp-1">
+                Genre {{ str()->title($genre) }}
+            </span>
         </flux:breadcrumbs.item>
     </flux:breadcrumbs>
 

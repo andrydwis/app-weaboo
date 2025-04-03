@@ -5,7 +5,9 @@
             icon="home"
         />
         <flux:breadcrumbs.item>
-            Nonton Anime
+            <span class="line-clamp-1 whitespace-nowrap">
+                Nonton Anime
+            </span>
         </flux:breadcrumbs.item>
     </flux:breadcrumbs>
 

@@ -35,16 +35,9 @@
             <flux:navlist.item
                 icon="eye"
                 iconVariant="solid"
-                href="#"
+                href="{{ route('public.animes.watchlist.index') }}"
             >
                 Watchlist
-            </flux:navlist.item>
-            <flux:navlist.item
-                icon="clock"
-                iconVariant="solid"
-                href="#"
-            >
-                Riwayat
             </flux:navlist.item>
         </flux:navlist.group>
     </flux:navlist>

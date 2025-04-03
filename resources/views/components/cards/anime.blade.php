@@ -21,7 +21,7 @@
                 icon="play-circle"
                 class="absolute right-2 top-2"
             >
-                Eps {{ $anime['episodes'] }}
+                {{ $anime['episodes'] }} Eps
             </flux:badge>
         @endif
         <div
