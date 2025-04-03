@@ -17,7 +17,7 @@
             />
             <flux:input
                 as="button"
-                placeholder="Cari anime atau manga..."
+                placeholder="Cari anime atau manga"
                 icon="magnifying-glass"
                 class="hidden lg:flex"
             />

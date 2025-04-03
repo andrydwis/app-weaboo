@@ -16,16 +16,10 @@
         <div class="flex h-0 flex-grow flex-col gap-2 overflow-auto rounded-lg">
             <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
                 @for ($i = 0; $i < 9; $i++)
-                    <x-cards
+                    <x-cards.placeholder
                         wire:loading
                         wire:target="search"
-                        class="aspect-[3/4] overflow-hidden !p-0"
-                    >
-                        <div
-                            class="flex h-full w-full animate-pulse items-center justify-center bg-white/50">
-                            <flux:icon.loading class="size-10 lg:size-20" />
-                        </div>
-                    </x-cards>
+                    />
                 @endfor
                 @if ($search && !empty($animes))
                     <div

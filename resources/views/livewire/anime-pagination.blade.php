@@ -34,16 +34,10 @@
     </div>
     <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
         @for ($i = 0; $i < 10; $i++)
-            <x-cards
+            <x-cards.placeholder
                 wire:loading
                 wire:target="nextPage, prevPage, getAnimePaginationData"
-                class="aspect-[3/4] overflow-hidden !p-0"
-            >
-                <div
-                    class="flex h-full w-full animate-pulse items-center justify-center bg-white/50">
-                    <flux:icon.loading class="size-10 lg:size-20" />
-                </div>
-            </x-cards>
+            />
         @endfor
         @foreach ($animes as $anime)
             <x-cards.anime

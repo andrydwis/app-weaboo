@@ -25,14 +25,11 @@
         </flux:heading>
         <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
             @forelse ($watchlist as $list)
-                <div class="flex flex-col gap-2">
-                    @php
-                        $anime = $list['data'];
-                        $anime['episodes'] = $list['data']['total_episodes'];
-                    @endphp
-                    <x-cards.anime :anime="$anime" />
-                    <livewire:anime-watchlist :anime="$anime" />
-                </div>
+                @php
+                    $anime = $list['data'];
+                    $anime['episodes'] = $list['data']['total_episodes'];
+                @endphp
+                <x-cards.anime :anime="$anime" />
             @empty
                 <div class="col-span-full">
                     <x-cards>

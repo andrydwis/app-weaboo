@@ -25,7 +25,7 @@
         <flux:modal.trigger name="search">
             <flux:input
                 as="button"
-                placeholder="Cari anime atau manga..."
+                placeholder="Cari anime atau manga"
                 icon="magnifying-glass"
                 class="backdrop-blur"
             />
