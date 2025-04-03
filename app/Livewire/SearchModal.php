@@ -47,13 +47,13 @@ class SearchModal extends Component
     {
         $this->animes = Http::get(config('services.weaboo.api_url').'/anime/search', [
             'query' => $this->search,
-        ])->json();
+        ])->json() ?? [];
     }
 
     public function searchManga(): void
     {
         $this->mangas = Http::get(config('services.weaboo.api_url').'/manga/search', [
             'query' => $this->search,
-        ])->json();
+        ])->json() ?? [];
     }
 }

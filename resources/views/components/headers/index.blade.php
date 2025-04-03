@@ -14,6 +14,12 @@
                 icon="magnifying-glass"
                 class="lg:hidden"
             />
+            <flux:input
+                as="button"
+                placeholder="Cari anime atau manga..."
+                icon="magnifying-glass"
+                class="hidden lg:flex"
+            />
         </flux:modal.trigger>
         <livewire:search-modal />
 

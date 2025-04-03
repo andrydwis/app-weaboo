@@ -7,5 +7,6 @@ Route::name('public.')->group(function () {
         return view('public.home');
     })->name('home.index');
     Route::get('/animes', [App\Http\Controllers\Web\Public\Anime\AnimeController::class, 'index'])->name('animes.index');
+    Route::get('/animes/genre/{genre}', [App\Http\Controllers\Web\Public\Anime\AnimeController::class, 'genre'])->name('animes.genre');
     Route::get('/animes/{anime}', [App\Http\Controllers\Web\Public\Anime\AnimeController::class, 'show'])->name('animes.show');
 });

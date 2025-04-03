@@ -16,14 +16,6 @@
         🇯🇵
     </flux:brand>
 
-    <flux:modal.trigger name="search">
-        <flux:input
-            as="button"
-            placeholder="Cari..."
-            icon="magnifying-glass"
-        />
-    </flux:modal.trigger>
-
     <flux:navlist>
         <flux:navlist.item
             icon="home"

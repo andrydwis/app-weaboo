@@ -178,7 +178,10 @@
         <x-sidebars />
         <x-headers />
 
-        <flux:main class="flex h-full flex-col gap-8">
+        <flux:main
+            container
+            class="flex h-full flex-col gap-8"
+        >
             {{ $slot }}
 
             <x-footers />

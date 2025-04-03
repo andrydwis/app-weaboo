@@ -19,13 +19,11 @@
                     <x-cards
                         wire:loading
                         wire:target="search"
-                        class="aspect-[3/4] animate-pulse !bg-zinc-200 !p-2 dark:!bg-zinc-600"
+                        class="aspect-[3/4] overflow-hidden !p-0"
                     >
-                        <div class="flex flex-col gap-2">
-                            <div class="w-full rounded-lg bg-white p-4 dark:bg-zinc-400">
-                            </div>
-                            <div class="w-3/4 rounded-lg bg-white p-4 dark:bg-zinc-400">
-                            </div>
+                        <div
+                            class="flex h-full w-full animate-pulse items-center justify-center bg-white/50">
+                            <flux:icon.loading class="size-10 lg:size-20" />
                         </div>
                     </x-cards>
                 @endfor
@@ -59,30 +57,7 @@
                     </div>
                 @endif
                 @foreach ($mangas as $manga)
-                    <x-cards
-                        wire:loading.remove
-                        wire:target="search"
-                        class="group aspect-[3/4] h-full overflow-hidden !p-0"
-                    >
-                        <img
-                            src="{{ $manga['image'] }}"
-                            alt="{{ $manga['title'] }}"
-                            loading="lazy"
-                            class="h-full w-full rounded-xl object-cover transition-all group-hover:scale-110 group-hover:brightness-50"
-                        >
-                        <flux:icon.book-open
-                            variant="solid"
-                            class="absolute left-1/2 top-1/2 hidden size-10 -translate-x-1/2 -translate-y-1/2 text-white transition-all group-hover:block lg:size-20"
-                        />
-                        <div
-                            class="pointer-events-none absolute bottom-0 w-full bg-white/75 p-2 dark:bg-zinc-900/50">
-                            <flux:heading
-                                class="dark!text-white :!text-zinc-800 line-clamp-1 !font-bold"
-                            >
-                                {{ $manga['title'] }}
-                            </flux:heading>
-                        </div>
-                    </x-cards>
+                    <x-cards.manga :manga="$manga" />
                 @endforeach
 
                 @if ($search && empty($animes) && empty($mangas))

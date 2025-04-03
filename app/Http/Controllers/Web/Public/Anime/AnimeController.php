@@ -13,14 +13,19 @@ class AnimeController extends Controller
         $genres = Http::get(config('services.weaboo.api_url').'/anime/genres', [
         ])->json();
 
-        $animes = Http::get(config('services.weaboo.api_url').'/anime/ongoing', [
-        ])->json();
-
         $data = [
             'genres' => $genres,
-            'animes' => $animes['animes'],
         ];
 
         return view('public.anime.index', $data);
+    }
+
+    public function genre(string $genre): View
+    {
+        $data = [
+            'genre' => $genre,
+        ];
+
+        return view('public.anime.genre', $data);
     }
 }
