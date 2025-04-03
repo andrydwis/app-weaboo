@@ -9,6 +9,7 @@
     <flux:spacer />
 
     <div class="flex flex-row items-center gap-2">
+        <livewire:search-modal />
         <flux:modal.trigger name="search">
             <flux:button
                 icon="magnifying-glass"
@@ -21,7 +22,6 @@
                 class="hidden lg:flex"
             />
         </flux:modal.trigger>
-        <livewire:search-modal />
 
         <flux:separator vertical />
 

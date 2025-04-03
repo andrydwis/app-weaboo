@@ -28,4 +28,16 @@ class AnimeController extends Controller
 
         return view('public.anime.genre', $data);
     }
+
+    public function show(string $anime): View
+    {
+        $anime = Http::get(config('services.weaboo.api_url').'/anime/'.$anime, [
+        ])->json();
+
+        $data = [
+            'anime' => $anime,
+        ];
+
+        return view('public.anime.show', $data);
+    }
 }
