@@ -32,14 +32,6 @@
             >
                 <flux:profile avatar:name="{{ auth()?->user()?->name }}" />
                 <flux:menu>
-                    @role('admin')
-                        <flux:menu.item
-                            icon="gauge"
-                            href=""
-                        >
-                            Dashboard
-                        </flux:menu.item>
-                    @endrole
                     <flux:menu.item
                         icon="user"
                         href="/profile"
