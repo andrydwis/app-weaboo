@@ -21,7 +21,7 @@
         <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
             @foreach ($genres as $genre)
                 <flux:button
-                    href="{{ route('public.animes.genre', ['genre' => $genre['id']]) }}"
+                    href="{{ route('public.animes.genres.show', ['genre' => $genre['id']]) }}"
                     class="w-full"
                 >
                     {{ $genre['name'] }}

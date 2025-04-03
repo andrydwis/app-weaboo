@@ -23,6 +23,7 @@
                 <flux:button
                     variant="primary"
                     icon="play-circle"
+                    href="{{ route('public.animes.episodes.show', ['anime' => $anime['id'], 'episode' => $anime['episodes'][0]['id']]) }}"
                 >
                     Mulai Nonton
                 </flux:button>
@@ -46,7 +47,7 @@
                     <div class="flex flex-row flex-wrap items-center gap-2">
                         @foreach ($anime['genres'] as $genre)
                             <a
-                                href="{{ route('public.animes.genre', ['genre' => $genre['id']]) }}">
+                                href="{{ route('public.animes.genres.show', ['genre' => $genre['id']]) }}">
                                 <flux:badge size="sm">
                                     {{ $genre['name'] }}
                                 </flux:badge>
@@ -104,6 +105,12 @@
             </div>
         </div>
     </x-cards>
+
+    <x-modules.anime.episodes
+        :anime="$anime"
+        :episodes="$anime['episodes']"
+        :histories="$histories"
+    />
 
     <div class="flex flex-col gap-4">
         <flux:heading
