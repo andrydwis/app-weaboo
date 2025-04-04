@@ -16,29 +16,26 @@
                 menyediakan tautan ke media yang dihosting oleh layanan pihak ketiga.
             </flux:text>
             <div class="flex flex-row flex-wrap items-center gap-2">
-                <a href="">
+                <a href="{{ route('dmca') }}">
                     <flux:badge
                         as="button"
                         size="sm"
-                        href="{{ route('dmca') }}"
                     >
                         DMCA
                     </flux:badge>
                 </a>
-                <a href="">
+                <a href="{{ route('privacy-policy') }}">
                     <flux:badge
                         as="button"
                         size="sm"
-                        href="{{ route('privacy-policy') }}"
                     >
                         Kebijakan Privasi
                     </flux:badge>
                 </a>
-                <a href="">
+                <a href="{{ route('terms-of-service') }}">
                     <flux:badge
                         as="button"
                         size="sm"
-                        href="{{ route('terms-of-service') }}"
                     >
                         Syarat dan Ketentuan
                     </flux:badge>
