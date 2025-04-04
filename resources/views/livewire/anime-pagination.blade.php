@@ -47,17 +47,21 @@
         @endforeach
         @if (!empty($pagination))
             <div
-                class="col-span-2 flex flex-row items-center justify-center gap-2 lg:col-span-5 lg:hidden">
+                class="col-span-2 grid grid-cols-2 gap-2 lg:col-span-5 lg:hidden">
                 <flux:button
                     :disabled="!$pagination['has_prev_page']"
                     icon="chevron-left"
                     wire:click="prevPage"
-                />
+                >
+                    Sebelumnya
+                </flux:button>
                 <flux:button
                     :disabled="!$pagination['has_next_page']"
                     icon="chevron-right"
                     wire:click="nextPage"
-                />
+                >
+                    Selanjutnya
+                </flux:button>
             </div>
         @endif
     </div>

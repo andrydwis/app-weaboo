@@ -24,6 +24,7 @@
         >
             Beranda
         </flux:navlist.item>
+
         <flux:navlist.group heading="Anime">
             <flux:navlist.item
                 icon="play-circle"
@@ -38,6 +39,23 @@
                 href="{{ route('public.animes.watchlist.index') }}"
             >
                 Watchlist
+            </flux:navlist.item>
+        </flux:navlist.group>
+
+        <flux:navlist.group heading="Manga">
+            <flux:navlist.item
+                icon="book-open"
+                iconVariant="solid"
+                href="{{ route('public.mangas.index') }}"
+            >
+                Baca Manga
+            </flux:navlist.item>
+            <flux:navlist.item
+                icon="bookmark"
+                iconVariant="solid"
+                href="#"
+            >
+                Bookmark
             </flux:navlist.item>
         </flux:navlist.group>
     </flux:navlist>

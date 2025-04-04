@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class AnimeEpisodeHistories extends Model
+class MangaChapterHistory extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
         'user_id',
-        'anime_id',
-        'episode_id',
+        'manga_id',
+        'chapter_id',
     ];
 
     public function user(): BelongsTo

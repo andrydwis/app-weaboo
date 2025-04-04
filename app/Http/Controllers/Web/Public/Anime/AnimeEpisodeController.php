@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web\Public\Anime;
 
 use App\Http\Controllers\Controller;
-use App\Models\AnimeEpisodeHistories;
+use App\Models\AnimeEpisodeHistory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
@@ -19,7 +19,7 @@ class AnimeEpisodeController extends Controller
         ])->json();
 
         // update or create history
-        AnimeEpisodeHistories::updateOrCreate(
+        AnimeEpisodeHistory::updateOrCreate(
             [
                 'user_id' => Auth::id(),
                 'anime_id' => $anime['id'],
@@ -32,7 +32,7 @@ class AnimeEpisodeController extends Controller
             ]
         );
 
-        $histories = AnimeEpisodeHistories::where('user_id', Auth::id())
+        $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
             ->where('anime_id', $anime['id'])
             ->get()
             ->pluck(['episode_id'])->toArray();

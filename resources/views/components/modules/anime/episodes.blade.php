@@ -1,4 +1,4 @@
-@props(['anime', 'episodes', 'episodeId' => null, 'histories'])
+@props(['anime', 'episodes', 'episodeId' => null, 'histories' => []])
 <div class="flex flex-col gap-4">
     <flux:heading
         size="lg"

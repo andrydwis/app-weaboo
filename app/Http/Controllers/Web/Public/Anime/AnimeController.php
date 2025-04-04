@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web\Public\Anime;
 
 use App\Http\Controllers\Controller;
-use App\Models\AnimeEpisodeHistories;
+use App\Models\AnimeEpisodeHistory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
@@ -36,7 +36,7 @@ class AnimeController extends Controller
         $anime = Http::get(config('services.weaboo.api_url').'/anime/'.$anime, [
         ])->json();
 
-        $histories = AnimeEpisodeHistories::where('user_id', Auth::id())
+        $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
             ->where('anime_id', $anime['id'])
             ->get()
             ->pluck(['episode_id'])->toArray();
