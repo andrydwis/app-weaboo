@@ -29,13 +29,14 @@
         <!-- Primary Meta Tags -->
         @if (!$title)
             <title>
-                Weaboo.my.id - Nonton Anime Gratis, Komunitas Wibu, dan Berita Terbaru
+                Weaboo.my.id - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan
+                Berita Terbaru
                 Seputar Anime
             </title>
 
             <meta
                 name="title"
-                content="Weaboo.my.id - Nonton Anime Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
+                content="Weaboo.my.id - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
             />
         @else
             <title>
@@ -53,7 +54,7 @@
         @if (!$description)
             <meta
                 name="description"
-                content="Weaboo.my.id adalah tempat terbaik untuk nonton anime gratis, bergabung dengan komunitas wibu, dan mendapatkan informasi terkini seputar dunia anime. Temukan anime favoritmu di sini!"
+                content="Weaboo.my.id, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
             />
         @else
             <meta
@@ -64,7 +65,7 @@
         @if (!$keywords)
             <meta
                 name="keywords"
-                content="nonton anime, komunitas wibu, anime gratis, anime terbaru, berita anime, weaboo, anime indonesia, streaming anime, forum wibu, anime terbaik"
+                content="nonton anime, komunitas wibu, anime gratis, anime terbaru, manga gratis, manga terbaru, manga indonesia,berita anime, weaboo, anime indonesia, streaming anime, forum wibu, anime terbaik"
             >
         @else
             <meta
@@ -93,7 +94,7 @@
         @if (!$title)
             <meta
                 property="og:title"
-                content="Weaboo.my.id - Nonton Anime Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
+                content="Weaboo.my.id - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
             />
         @else
             <meta
@@ -104,7 +105,7 @@
         @if (!$description)
             <meta
                 property="og:description"
-                content="Weaboo.my.id adalah tempat terbaik untuk nonton anime gratis, bergabung dengan komunitas wibu, dan mendapatkan informasi terkini seputar dunia anime. Temukan anime favoritmu di sini!"
+                content="Weaboo.my.id, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
             />
         @else
             <meta
@@ -136,7 +137,7 @@
         @if (!$title)
             <meta
                 property="twitter:title"
-                content="Weaboo.my.id - Nonton Anime Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
+                content="Weaboo.my.id - Nonton Anime dan Baca Manga Gratis dan Tanpa Iklan"
             />
         @else
             <meta
@@ -147,7 +148,7 @@
         @if (!$description)
             <meta
                 property="twitter:description"
-                content="Weaboo.my.id adalah tempat terbaik untuk nonton anime gratis, bergabung dengan komunitas wibu, dan mendapatkan informasi terkini seputar dunia anime. Temukan anime favoritmu di sini!"
+                content="Weaboo.my.id, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
             />
         @else
             <meta
