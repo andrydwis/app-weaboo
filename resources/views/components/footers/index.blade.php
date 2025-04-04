@@ -20,6 +20,7 @@
                     <flux:badge
                         as="button"
                         size="sm"
+                        href="{{ route('dmca') }}"
                     >
                         DMCA
                     </flux:badge>
@@ -28,6 +29,7 @@
                     <flux:badge
                         as="button"
                         size="sm"
+                        href="{{ route('privacy-policy') }}"
                     >
                         Kebijakan Privasi
                     </flux:badge>
@@ -36,6 +38,7 @@
                     <flux:badge
                         as="button"
                         size="sm"
+                        href="{{ route('terms-of-service') }}"
                     >
                         Syarat dan Ketentuan
                     </flux:badge>

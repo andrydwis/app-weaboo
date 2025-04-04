@@ -27,7 +27,7 @@
             @forelse ($watchlist as $list)
                 @php
                     $anime = $list['data'];
-                    $anime['episodes'] = $list['data']['total_episodes'];
+                    $anime['episodes'] = null;
                 @endphp
                 <x-cards.anime :anime="$anime" />
             @empty
