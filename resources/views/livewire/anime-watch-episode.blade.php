@@ -15,6 +15,28 @@
             <flux:icon.loading class="size-10 lg:size-20" />
         </div>
     </div>
+    <div
+        class="grid grid-cols-2 gap-2 lg:flex lg:flex-row lg:items-center lg:justify-between">
+        <flux:button
+            :href="$prevEpisode ? route('public.animes.episodes.show', ['anime' => $anime['id'],
+                'episode' => $prevEpisode
+            ]) : null"
+            :icon="$prevEpisode ? 'arrow-left' : 'no-symbol'"
+            :disabled="!$prevEpisode"
+        >
+            Sebelumnya
+        </flux:button>
+        <flux:button
+            :href="$nextEpisode ? route('public.animes.episodes.show', ['anime' => $anime['id'],
+                'episode' => $nextEpisode
+            ]) : null"
+            :icon="$nextEpisode ? 'arrow-right' : 'no-symbol'"
+            :disabled="!$nextEpisode"
+        >
+            Selanjutnya
+        </flux:button>
+    </div>
+    <flux:separator />
     <div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
         <livewire:anime-watchlist :anime="$anime" />
 

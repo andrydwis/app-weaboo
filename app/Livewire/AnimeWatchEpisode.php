@@ -16,6 +16,10 @@ class AnimeWatchEpisode extends Component
 
     public string $streamUrl;
 
+    public ?string $prevEpisode = null;
+
+    public ?string $nextEpisode = null;
+
     public function render(): View
     {
         return view('livewire.anime-watch-episode');
@@ -24,6 +28,12 @@ class AnimeWatchEpisode extends Component
     public function mount(): void
     {
         $this->streamUrl = $this->episode['default_stream_url'];
+
+        $episodes = $this->anime['episodes'];
+        $index = array_search($this->episode['episode_id'], array_column($episodes, 'id'));
+
+        $this->nextEpisode = $index > 0 ? $episodes[$index - 1]['id'] : null;
+        $this->prevEpisode = $index < count($episodes) - 1 ? $episodes[$index + 1]['id'] : null;
     }
 
     public function fetchStreamUrl(string $serverId): void

@@ -28,7 +28,7 @@
         :episode="$episode"
     />
 
-    <x-modules.anime.episodes
+    <livewire:anime-episodes
         :anime="$anime"
         :episodes="$anime['episodes']"
         :episodeId="$episode['episode_id']"

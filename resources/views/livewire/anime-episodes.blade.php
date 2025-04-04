@@ -1,11 +1,16 @@
-@props(['anime', 'episodes', 'episodeId' => null, 'histories' => []])
 <div class="flex flex-col gap-4">
-    <flux:heading
-        size="lg"
-        class="!font-bold"
-    >
-        Daftar Episode
-    </flux:heading>
+    <div class="flex items-center justify-between gap-2">
+        <flux:heading
+            size="lg"
+            class="!font-bold"
+        >
+            Daftar Episode
+        </flux:heading>
+        <flux:button
+            icon="arrows-up-down"
+            wire:click="reverseSort"
+        />
+    </div>
     <div class="grid max-h-[400px] grid-cols-2 gap-2 overflow-auto lg:grid-cols-5">
         @foreach ($episodes as $episode)
             @if ($episode['id'] === $episodeId)

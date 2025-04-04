@@ -110,7 +110,7 @@
         </div>
     </x-cards>
 
-    <x-modules.anime.episodes
+    <livewire:anime-episodes
         :anime="$anime"
         :episodes="$anime['episodes']"
         :histories="$histories"
