@@ -23,19 +23,21 @@ class MangaChapterController extends Controller
         $nextChapter = $chapterIndex > 0 ? $chapters[$chapterIndex - 1] : null;
         $prevChapter = $chapterIndex < count($chapters) - 1 ? $chapters[$chapterIndex + 1] : null;
 
-        // update or create history
-        MangaChapterHistory::updateOrCreate(
-            [
-                'user_id' => Auth::id(),
-                'manga_id' => $manga['id'],
-                'chapter_id' => $chapter['id'],
-            ],
-            [
-                'user_id' => Auth::id(),
-                'manga_id' => $manga['id'],
-                'chapter_id' => $chapter['id'],
-            ]
-        );
+        if (Auth::check()) {
+            // update or create history
+            MangaChapterHistory::updateOrCreate(
+                [
+                    'user_id' => Auth::id(),
+                    'manga_id' => $manga['id'],
+                    'chapter_id' => $chapter['id'],
+                ],
+                [
+                    'user_id' => Auth::id(),
+                    'manga_id' => $manga['id'],
+                    'chapter_id' => $chapter['id'],
+                ]
+            );
+        }
 
         $data = [
             'manga' => $manga,

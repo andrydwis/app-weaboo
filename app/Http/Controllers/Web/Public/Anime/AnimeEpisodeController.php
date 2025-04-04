@@ -18,24 +18,28 @@ class AnimeEpisodeController extends Controller
         $episode = Http::get(config('services.weaboo.api_url').'/anime/'.$anime['id'].'/episodes/'.$episode, [
         ])->json();
 
-        // update or create history
-        AnimeEpisodeHistory::updateOrCreate(
-            [
-                'user_id' => Auth::id(),
-                'anime_id' => $anime['id'],
-                'episode_id' => $episode['episode_id'],
-            ],
-            [
-                'user_id' => Auth::id(),
-                'anime_id' => $anime['id'],
-                'episode_id' => $episode['episode_id'],
-            ]
-        );
+        if (Auth::check()) {
+            // update or create history
+            AnimeEpisodeHistory::updateOrCreate(
+                [
+                    'user_id' => Auth::id(),
+                    'anime_id' => $anime['id'],
+                    'episode_id' => $episode['episode_id'],
+                ],
+                [
+                    'user_id' => Auth::id(),
+                    'anime_id' => $anime['id'],
+                    'episode_id' => $episode['episode_id'],
+                ]
+            );
 
-        $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
-            ->where('anime_id', $anime['id'])
-            ->get()
-            ->pluck(['episode_id'])->toArray();
+            $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
+                ->where('anime_id', $anime['id'])
+                ->get()
+                ->pluck(['episode_id'])->toArray();
+        } else {
+            $histories = [];
+        }
 
         $data = [
             'anime' => $anime,

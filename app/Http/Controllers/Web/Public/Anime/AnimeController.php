@@ -36,10 +36,14 @@ class AnimeController extends Controller
         $anime = Http::get(config('services.weaboo.api_url').'/anime/'.$anime, [
         ])->json();
 
-        $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
-            ->where('anime_id', $anime['id'])
-            ->get()
-            ->pluck(['episode_id'])->toArray();
+        if (Auth::check()) {
+            $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
+                ->where('anime_id', $anime['id'])
+                ->get()
+                ->pluck(['episode_id'])->toArray();
+        } else {
+            $histories = [];
+        }
 
         $data = [
             'anime' => $anime,
