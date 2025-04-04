@@ -14,6 +14,7 @@ Route::name('public.')->group(function () {
 
     Route::get('/mangas', [App\Http\Controllers\Web\Public\Manga\MangaController::class, 'index'])->name('mangas.index');
     Route::get('/mangas/genres/{genre}', [App\Http\Controllers\Web\Public\Manga\MangaController::class, 'genre'])->name('mangas.genres.show');
+    Route::get('/mangas/bookmark', [App\Http\Controllers\Web\Public\Manga\MangaBookmarkController::class, 'index'])->name('mangas.bookmark.index')->middleware('auth');
     Route::get('/mangas/{manga}', [App\Http\Controllers\Web\Public\Manga\MangaController::class, 'show'])->name('mangas.show');
     Route::get('/mangas/{manga}/chapters/{chapter}', [App\Http\Controllers\Web\Public\Manga\MangaChapterController::class, 'show'])->name('mangas.chapters.show');
 });

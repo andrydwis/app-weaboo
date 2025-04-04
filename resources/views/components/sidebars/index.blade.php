@@ -53,7 +53,7 @@
             <flux:navlist.item
                 icon="bookmark"
                 iconVariant="solid"
-                href="#"
+                href="{{ route('public.mangas.bookmark.index') }}"
             >
                 Bookmark
             </flux:navlist.item>

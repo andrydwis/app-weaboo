@@ -31,6 +31,7 @@
                 >
                     Mulai Baca
                 </flux:button>
+                <livewire:manga-bookmark :manga="$manga" />
             </div>
             <div class="flex flex-col gap-4 md:col-span-3">
                 <div class="flex flex-col">
