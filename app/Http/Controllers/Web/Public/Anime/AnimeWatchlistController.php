@@ -11,7 +11,7 @@ class AnimeWatchlistController extends Controller
 {
     public function index(): View
     {
-        $watchlist = AnimeWatchlist::where('user_id', Auth::id())->get();
+        $watchlist = AnimeWatchlist::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
 
         $data = [
             'watchlist' => $watchlist,

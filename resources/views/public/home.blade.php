@@ -21,7 +21,7 @@
                 </flux:heading>
             </x-cards>
         </a>
-        <a href="">
+        <a href="{{ route('public.mangas.index') }}">
             <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/manga.jpg') }}"

@@ -11,7 +11,7 @@ class MangaBookmarkController extends Controller
 {
     public function index(): View
     {
-        $bookmarks = MangaBookmark::where('user_id', Auth::id())->get();
+        $bookmarks = MangaBookmark::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
 
         $data = [
             'bookmarks' => $bookmarks,
