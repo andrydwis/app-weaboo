@@ -61,7 +61,7 @@
                 </flux:heading>
             </x-cards>
         </a>
-        <a href="">
+        <a href="{{ route('public.news.index') }}">
             <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/news.jpg') }}"

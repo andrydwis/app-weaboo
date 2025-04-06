@@ -25,6 +25,14 @@
             Beranda
         </flux:navlist.item>
 
+        <flux:navlist.item
+            icon="newspaper"
+            iconVariant="solid"
+            href="{{ route('public.news.index') }}"
+        >
+            Berita Terbaru
+        </flux:navlist.item>
+
         <flux:navlist.group heading="Anime">
             <flux:navlist.item
                 icon="play-circle"
