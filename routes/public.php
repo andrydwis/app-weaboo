@@ -17,4 +17,7 @@ Route::name('public.')->group(function () {
     Route::get('/mangas/bookmark', [App\Http\Controllers\Web\Public\Manga\MangaBookmarkController::class, 'index'])->name('mangas.bookmark.index')->middleware('auth');
     Route::get('/mangas/{manga}', [App\Http\Controllers\Web\Public\Manga\MangaController::class, 'show'])->name('mangas.show');
     Route::get('/mangas/{manga}/chapters/{chapter}', [App\Http\Controllers\Web\Public\Manga\MangaChapterController::class, 'show'])->name('mangas.chapters.show');
+
+    Route::get('/news', [App\Http\Controllers\Web\Public\News\NewsController::class, 'index'])->name('news.index');
+    Route::get('/news/{news}', [App\Http\Controllers\Web\Public\News\NewsController::class, 'show'])->name('news.show');
 });
