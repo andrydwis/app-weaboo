@@ -51,7 +51,7 @@
             />
             <flux:select
                 onchange="window.location.href = this.value"
-                class="!w-auto flex-grow"
+                class="flex-grow !w-0"
             >
                 @foreach ($chapters as $chapterManga)
                     <flux:select.option
