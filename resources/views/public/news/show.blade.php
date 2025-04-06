@@ -1,4 +1,8 @@
-<x-layouts title="{{ $news['title'] }}">
+<x-layouts
+    title="{{ $news['title'] }}"
+    description="{{ str($news['description'])->limit(100) }}"
+    image="{{ $news['image'] }}"
+>
     <flux:breadcrumbs>
         <flux:breadcrumbs.item
             href="{{ route('public.home.index') }}"

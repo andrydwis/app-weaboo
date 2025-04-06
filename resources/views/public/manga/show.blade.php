@@ -1,4 +1,8 @@
-<x-layouts title="Baca Manga {{ $manga['title'] }}">
+<x-layouts
+    title="Baca Manga {{ $manga['title'] }}"
+    description="{{ $manga['description'] }}"
+    image="{{ $manga['image'] }}"
+>
     <flux:breadcrumbs>
         <flux:breadcrumbs.item
             href="{{ route('public.home.index') }}"
