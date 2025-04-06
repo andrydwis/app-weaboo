@@ -6,6 +6,10 @@ Route::name('public.')->group(function () {
     Route::get('/', function () {
         return view('public.home');
     })->name('home.index');
+
+    Route::get('/profile', [App\Http\Controllers\Web\Public\Profile\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [App\Http\Controllers\Web\Public\Profile\ProfileController::class, 'update'])->name('profile.update');
+
     Route::get('/animes', [App\Http\Controllers\Web\Public\Anime\AnimeController::class, 'index'])->name('animes.index');
     Route::get('/animes/genres/{genre}', [App\Http\Controllers\Web\Public\Anime\AnimeController::class, 'genre'])->name('animes.genres.show');
     Route::get('/animes/watchlist', [App\Http\Controllers\Web\Public\Anime\AnimeWatchlistController::class, 'index'])->name('animes.watchlist.index')->middleware('auth');

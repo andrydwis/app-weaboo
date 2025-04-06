@@ -12,13 +12,15 @@
     </flux:breadcrumbs>
 
     <div class="flex flex-col gap-4">
-        <flux:heading>
+        <flux:heading
+            size="lg"
+            class="!font-bold"
+        >
             Berita Terbaru
         </flux:heading>
         <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
             @foreach ($news as $newsData)
-                <a
-                    href="{{ route('public.news.show', ['news' => $newsData['id']]) }}">
+                <a href="{{ route('public.news.show', ['news' => $newsData['id']]) }}">
                     <x-cards class="group overflow-hidden !p-0">
                         <div class="relative aspect-video overflow-hidden">
                             <img

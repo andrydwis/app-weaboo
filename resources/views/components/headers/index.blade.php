@@ -34,7 +34,7 @@
                 <flux:menu>
                     <flux:menu.item
                         icon="user"
-                        href="/profile"
+                        href="{{ route('public.profile.edit') }}"
                     >
                         Profil
                     </flux:menu.item>

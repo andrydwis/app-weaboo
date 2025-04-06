@@ -27,12 +27,14 @@
                 type="text"
                 name="name"
                 placeholder="Masukkan nama kamu"
+                required
             />
             <flux:input
                 label="Email"
                 type="email"
                 name="email"
                 placeholder="email@example.com"
+                required
                 clearable
             />
             <flux:input
@@ -41,6 +43,7 @@
                 name="password"
                 placeholder="*****"
                 autocomplete="new-password"
+                required
                 viewable
             />
             <flux:input
@@ -49,6 +52,7 @@
                 name="password_confirmation"
                 placeholder="*****"
                 autocomplete="new-password"
+                required
                 viewable
             />
             <flux:button

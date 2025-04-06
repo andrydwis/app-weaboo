@@ -27,6 +27,7 @@
                 type="email"
                 name="email"
                 placeholder="email@example.com"
+                required
                 clearable
             />
             <flux:input
@@ -34,6 +35,7 @@
                 type="password"
                 name="password"
                 placeholder="*****"
+                required
                 viewable
             />
             <flux:button
