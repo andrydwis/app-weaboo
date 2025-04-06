@@ -24,13 +24,33 @@
                     alt="{{ $manga['title'] }}"
                     class="aspect-[3/4] w-full rounded-xl object-cover"
                 >
-                <flux:button
-                    variant="primary"
-                    icon="book-open"
-                    href="{{ route('public.mangas.chapters.show', ['manga' => $manga['id'], 'chapter' => end($manga['chapters'])['id']]) }}"
-                >
-                    Mulai Baca
-                </flux:button>
+                @auth
+                    @if ($lastHistory)
+                        <flux:button
+                            variant="primary"
+                            icon="book-open"
+                            href="{{ route('public.mangas.chapters.show', ['manga' => $manga['id'], 'chapter' => $lastHistory]) }}"
+                        >
+                            Lanjutkan Baca
+                        </flux:button>
+                    @else
+                        <flux:button
+                            variant="primary"
+                            icon="book-open"
+                            href="{{ route('public.mangas.chapters.show', ['manga' => $manga['id'], 'chapter' => end($manga['chapters'])['id']]) }}"
+                        >
+                            Mulai Baca
+                        </flux:button>
+                    @endif
+                @else
+                    <flux:button
+                        variant="primary"
+                        icon="book-open"
+                        href="{{ route('public.mangas.chapters.show', ['manga' => $manga['id'], 'chapter' => end($manga['chapters'])['id']]) }}"
+                    >
+                        Mulai Baca
+                    </flux:button>
+                @endauth
                 <livewire:manga-bookmark :manga="$manga" />
             </div>
             <div class="flex flex-col gap-4 md:col-span-3">

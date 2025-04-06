@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index(): View
     {
-        $news = Http::get(config('services.weaboo.api_url').'/news/recent-news', [])->json();
+        $news = Http::get(config('services.weaboo.api_url').'/news/recent', [])->json();
 
         $data = [
             'news' => $news,
@@ -21,11 +21,7 @@ class NewsController extends Controller
 
     public function show(string $news): View
     {
-        // convert base64 to string
-        $news = str()->fromBase64($news);
-        $news = Http::get(config('services.weaboo.api_url').'/news/get-news', ['id' => $news])->json();
-
-        
+        $news = Http::get(config('services.weaboo.api_url').'/news/'.$news, [])->json();
 
         $data = [
             'news' => $news,

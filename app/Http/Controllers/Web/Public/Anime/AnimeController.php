@@ -39,15 +39,21 @@ class AnimeController extends Controller
         if (Auth::check()) {
             $histories = AnimeEpisodeHistory::where('user_id', Auth::id())
                 ->where('anime_id', $anime['id'])
+                ->orderBy('updated_at', 'desc')
                 ->get()
                 ->pluck(['episode_id'])->toArray();
+
+            $lastHistory = $histories[0] ?? null;
         } else {
             $histories = [];
+
+            $lastHistory = null;
         }
 
         $data = [
             'anime' => $anime,
             'histories' => $histories,
+            'lastHistory' => $lastHistory,
         ];
 
         return view('public.anime.show', $data);

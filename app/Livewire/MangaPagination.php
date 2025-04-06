@@ -27,7 +27,7 @@ class MangaPagination extends Component
                 'page' => $this->page,
             ])->json();
         } elseif ($this->type === 'recent-update') {
-            $mangas = Http::get(config('services.weaboo.api_url').'/manga/recent-update', [
+            $mangas = Http::get(config('services.weaboo.api_url').'/manga/recent', [
                 'page' => $this->page,
             ])->json();
         } elseif ($this->type === 'genre') {

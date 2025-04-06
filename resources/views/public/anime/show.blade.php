@@ -24,13 +24,33 @@
                     alt="{{ $anime['title'] }}"
                     class="aspect-[3/4] w-full rounded-xl object-cover"
                 >
-                <flux:button
-                    variant="primary"
-                    icon="play-circle"
-                    href="{{ route('public.animes.episodes.show', ['anime' => $anime['id'], 'episode' => end($anime['episodes'])['id']]) }}"
-                >
-                    Mulai Nonton
-                </flux:button>
+                @auth
+                    @if ($lastHistory)
+                        <flux:button
+                            variant="primary"
+                            icon="play-circle"
+                            href="{{ route('public.animes.episodes.show', ['anime' => $anime['id'], 'episode' => $lastHistory]) }}"
+                        >
+                            Lanjutkan Nonton
+                        </flux:button>
+                    @else
+                        <flux:button
+                            variant="primary"
+                            icon="play-circle"
+                            href="{{ route('public.animes.episodes.show', ['anime' => $anime['id'], 'episode' => end($anime['episodes'])['id']]) }}"
+                        >
+                            Mulai Nonton
+                        </flux:button>
+                    @endif
+                @else
+                    <flux:button
+                        variant="primary"
+                        icon="play-circle"
+                        href="{{ route('public.animes.episodes.show', ['anime' => $anime['id'], 'episode' => end($anime['episodes'])['id']]) }}"
+                    >
+                        Mulai Nonton
+                    </flux:button>
+                @endauth
                 <livewire:anime-watchlist :anime="$anime" />
             </div>
             <div class="flex flex-col gap-4 md:col-span-3">

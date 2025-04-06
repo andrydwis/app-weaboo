@@ -15,7 +15,7 @@ class MangaChapterController extends Controller
         $manga = Http::get(config('services.weaboo.api_url').'/manga/'.$manga, [
         ])->json();
 
-        $chapter = Http::get(config('services.weaboo.api_url').'/manga/chapters/'.$chapter, [
+        $chapter = Http::get(config('services.weaboo.api_url').'/manga/'.$manga['id'].'/chapters/'.$chapter, [
         ])->json();
 
         $chapters = $manga['chapters'];
