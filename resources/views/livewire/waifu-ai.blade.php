@@ -25,8 +25,8 @@
         @empty
             <x-cards class="md:max-w-1/3 max-w-3/4 rounded-bl-none">
                 <flux:text>
-                    Halooo! Aku Midori Chan, Waifu AI yang siap membantu kamu.
-                    Ada yang bisa aku bantu?
+                    Ara ara~ 😘 Halooo! Midori Nee-san di sini, siap menemani dan membantu
+                    kamu. Ada yang bisa Midori bantu?
                 </flux:text>
             </x-cards>
         @endforelse
