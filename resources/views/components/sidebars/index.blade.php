@@ -16,7 +16,7 @@
         🇯🇵
     </flux:brand>
 
-    <flux:navlist>
+    <flux:navlist class="gap-2">
         <flux:navlist.item
             icon="home"
             iconVariant="solid"
@@ -26,12 +26,14 @@
         </flux:navlist.item>
 
         <flux:navlist.item
-            icon="newspaper"
+            icon="sparkles"
             iconVariant="solid"
-            href="{{ route('public.news.index') }}"
+            href="{{ route('public.ai.chat.index') }}"
         >
-            Berita Terbaru
+            Waifu AI
         </flux:navlist.item>
+
+        <flux:separator />
 
         <flux:navlist.group heading="Anime">
             <flux:navlist.item
@@ -66,6 +68,16 @@
                 Bookmark
             </flux:navlist.item>
         </flux:navlist.group>
+
+        <flux:separator />
+
+        <flux:navlist.item
+            icon="newspaper"
+            iconVariant="solid"
+            href="{{ route('public.news.index') }}"
+        >
+            Berita Terbaru
+        </flux:navlist.item>
     </flux:navlist>
 
     <flux:spacer />
