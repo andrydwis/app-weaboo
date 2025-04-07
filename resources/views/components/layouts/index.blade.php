@@ -1,4 +1,10 @@
-@props(['title' => null, 'description' => null, 'keywords' => null, 'image' => null])
+@props([
+    'title' => null,
+    'description' => null,
+    'keywords' => null,
+    'image' => null,
+    'withFooter' => true,
+])
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -185,7 +191,9 @@
         >
             {{ $slot }}
 
-            <x-footers />
+            @if ($withFooter)
+                <x-footers />
+            @endif
         </flux:main>
 
         @livewireScripts

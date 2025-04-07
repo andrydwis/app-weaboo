@@ -1,4 +1,4 @@
-<x-layouts title="Waifu AI">
+<x-layouts title="Waifu AI" :withFooter="false">
     <flux:breadcrumbs>
         <flux:breadcrumbs.item
             href="{{ route('public.home.index') }}"
