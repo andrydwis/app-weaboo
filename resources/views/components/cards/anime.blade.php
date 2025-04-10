@@ -3,7 +3,7 @@
     {{ $attributes }}
     href="{{ route('public.animes.show', ['anime' => $anime['id']]) }}"
 >
-    <x-cards class="aspect[3/4] group relative h-full overflow-hidden !p-0">
+    <x-cards class="group relative aspect-[3/4] h-full overflow-hidden !p-0">
         <img
             src="{{ $anime['image'] }}"
             alt="{{ $anime['title'] }}"

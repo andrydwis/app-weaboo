@@ -12,7 +12,7 @@ class AnimeController extends Controller
 {
     public function index(): View
     {
-        $genres = Http::get(config('services.weaboo.api_url').'/anime/genres', [
+        $genres = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/genres', [
         ])->json();
 
         $data = [
@@ -33,7 +33,7 @@ class AnimeController extends Controller
 
     public function show(string $anime): View
     {
-        $anime = Http::get(config('services.weaboo.api_url').'/anime/'.$anime, [
+        $anime = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
         ])->json();
 
         if (Auth::check()) {

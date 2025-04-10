@@ -39,7 +39,7 @@ class AnimeWatchEpisode extends Component
     public function fetchStreamUrl(string $serverId): void
     {
         try {
-            $server = Http::get(config('services.weaboo.api_url').'/anime/'.$this->anime['id'].'/servers/'.$serverId)->json();
+            $server = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$this->anime['id'].'/servers/'.$serverId)->json();
 
             $this->streamUrl = $server['url'];
         } catch (Exception $e) {

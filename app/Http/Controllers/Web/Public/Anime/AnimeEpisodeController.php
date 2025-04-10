@@ -12,10 +12,10 @@ class AnimeEpisodeController extends Controller
 {
     public function show(string $anime, string $episode): View
     {
-        $anime = Http::get(config('services.weaboo.api_url').'/anime/'.$anime, [
+        $anime = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
         ])->json();
 
-        $episode = Http::get(config('services.weaboo.api_url').'/anime/'.$anime['id'].'/episodes/'.$episode, [
+        $episode = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime['id'].'/episodes/'.$episode, [
         ])->json();
 
         if (Auth::check()) {

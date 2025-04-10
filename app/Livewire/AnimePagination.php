@@ -28,11 +28,11 @@ class AnimePagination extends Component
     public function getAnimePaginationData(): void
     {
         if ($this->type === 'ongoing') {
-            $animes = Http::get(config('services.weaboo.api_url').'/anime/ongoing', [
+            $animes = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/ongoing', [
                 'page' => $this->page,
             ])->json();
         } elseif ($this->type === 'genre') {
-            $animes = Http::get(config('services.weaboo.api_url').'/anime/genres/'.$this->genre, [
+            $animes = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/genres/'.$this->genre, [
                 'page' => $this->page,
             ])->json();
         }

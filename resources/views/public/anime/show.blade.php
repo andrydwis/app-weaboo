@@ -95,6 +95,15 @@
                         >
                             {{ $anime['release_date'] }}
                         </flux:badge>
+                        @if (isset($anime['season']))
+                            <flux:badge
+                                size="sm"
+                                color="sky"
+                                icon="cloud"
+                            >
+                                {{ $anime['season'] }}
+                            </flux:badge>
+                        @endif
                         <flux:badge
                             size="sm"
                             color="violet"
@@ -147,7 +156,7 @@
         >
             Rekomendasi Anime Lainnya
         </flux:heading>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
             @foreach ($anime['recommendations'] as $recommendation)
                 <x-cards.anime :anime="$recommendation" />
             @endforeach

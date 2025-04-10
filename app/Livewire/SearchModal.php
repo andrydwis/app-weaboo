@@ -45,7 +45,7 @@ class SearchModal extends Component
 
     public function searchAnime(): void
     {
-        $this->animes = Http::get(config('services.weaboo.api_url').'/anime/search', [
+        $this->animes = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/search', [
             'query' => $this->search,
         ])->json() ?? [];
     }
