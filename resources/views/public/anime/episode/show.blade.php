@@ -46,7 +46,7 @@
         >
             Rekomendasi Anime Lainnya
         </flux:heading>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
             @foreach ($anime['recommendations'] as $recommendation)
                 <x-cards.anime :anime="$recommendation" />
             @endforeach
