@@ -33,6 +33,14 @@
             Waifu AI
         </flux:navlist.item>
 
+        <flux:navlist.item
+            icon="newspaper"
+            iconVariant="solid"
+            href="{{ route('public.news.index') }}"
+        >
+            Berita Terbaru
+        </flux:navlist.item>
+
         <flux:separator />
 
         <flux:navlist.group heading="Anime">
@@ -69,15 +77,16 @@
             </flux:navlist.item>
         </flux:navlist.group>
 
-        <flux:separator />
+        <flux:navlist.group heading="Menu Lain">
+            <flux:navlist.item
+                icon="arrow-down-tray"
+                iconVariant="solid"
+                href="{{ route('public.other.social-media-downloader.index') }}"
+            >
+                Social Media Downloader
+            </flux:navlist.item>
+        </flux:navlist.group>
 
-        <flux:navlist.item
-            icon="newspaper"
-            iconVariant="solid"
-            href="{{ route('public.news.index') }}"
-        >
-            Berita Terbaru
-        </flux:navlist.item>
     </flux:navlist>
 
     <flux:spacer />

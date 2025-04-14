@@ -25,8 +25,8 @@
         @empty
             <x-cards class="md:max-w-1/3 max-w-full rounded-bl-none">
                 <flux:text>
-                    Ara ara~ 😘 Halooo! Midori Nee-san di sini, siap menemani dan membantu
-                    kamu. Ada yang bisa Midori bantu?
+                    Halooo! Midori Nee-san di sini, siap menemani dan membantu
+                    kamu.
                 </flux:text>
             </x-cards>
         @endforelse

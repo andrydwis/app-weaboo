@@ -123,7 +123,7 @@
         >
             Rekomendasi Manga Lainnya
         </flux:heading>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
             @foreach ($manga['recommendations'] as $recommendation)
                 <x-cards.manga :manga="$recommendation" />
             @endforeach

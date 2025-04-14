@@ -1,5 +1,5 @@
 <flux:header
-    class="sticky top-0 border-b border-zinc-200 bg-white dark:border-zinc-600 dark:bg-zinc-900"
+    class="sticky top-0 border-b border-zinc-200 bg-white dark:border-zinc-600 dark:bg-zinc-900 !z-[15]"
 >
     <flux:sidebar.toggle
         icon="bars-2"

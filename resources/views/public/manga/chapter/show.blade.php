@@ -2,6 +2,7 @@
     title="Baca Manga {{ $chapter['title'] }}"
     description="{{ $manga['description'] }}"
     image="{{ $manga['image'] }}"
+    :withFooter="false"
 >
     <flux:breadcrumbs>
         <flux:breadcrumbs.item
@@ -51,7 +52,7 @@
             />
             <flux:select
                 onchange="window.location.href = this.value"
-                class="flex-grow !w-0"
+                class="flex-grow !w-0 lg:!w-full"
             >
                 @foreach ($chapters as $chapterManga)
                     <flux:select.option

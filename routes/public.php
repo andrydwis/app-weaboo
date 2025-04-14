@@ -32,4 +32,8 @@ Route::name('public.')->group(function () {
     Route::prefix('ai')->name('ai.')->group(function () {
         Route::get('/chat', [App\Http\Controllers\Web\Public\Ai\Chat\ChatController::class, 'index'])->name('chat.index')->middleware('auth');
     });
+
+    Route::prefix('other')->name('other.')->group(function () {
+        Route::get('/social-media-downloader', [App\Http\Controllers\Web\Public\Other\SocialMediaDownloaderController::class, 'index'])->name('social-media-downloader.index');
+    });
 });
