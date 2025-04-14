@@ -27,8 +27,7 @@ class SocialMediaDownloader extends Component
     public function download(): void
     {
         $response = Http::get(config('services.weaboo.api_url').'/tools/social-media-downloader/download', [
-            'platform' => 'youtube',
-            'video_url' => $this->url,
+            'url' => $this->url,
         ])->json();
 
         $this->title = $response['title'];
