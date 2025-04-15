@@ -5,7 +5,7 @@
     class="!z-[15] !hidden border-b border-zinc-200 bg-white md:!flex dark:border-zinc-600 dark:bg-zinc-900"
 >
     <flux:sidebar.toggle
-        icon="bars-2"
+        icon="bars-3"
         class="lg:hidden"
     />
 
@@ -71,31 +71,41 @@
     class="min-md:!hidden fixed bottom-0 left-0 !z-[15] w-full border-t border-zinc-200 bg-white dark:border-zinc-600 dark:bg-zinc-900"
 >
     <flux:navbar class="w-full justify-evenly">
-        <flux:sidebar.toggle
-            icon="bars-2"
-            iconVariant="solid"
-        />
+        <flux:tooltip content="Menu">
+            <flux:sidebar.toggle
+                icon="bars-3"
+                iconVariant="solid"
+            />
+        </flux:tooltip>
+
         <flux:modal.trigger name="search">
-            <flux:button
-                variant="subtle"
-                icon="magnifying-glass"
-                iconVariant="solid"
-            />
+            <flux:tooltip content="Cari">
+                <flux:button
+                    variant="subtle"
+                    icon="magnifying-glass"
+                    iconVariant="solid"
+                />
+            </flux:tooltip>
         </flux:modal.trigger>
+
         @auth
-            <flux:button
-                variant="subtle"
-                href="{{ route('public.profile.edit') }}"
-                icon="user"
-                iconVariant="solid"
-            />
+            <flux:tooltip content="Profil">
+                <flux:button
+                    variant="subtle"
+                    href="{{ route('public.profile.edit') }}"
+                    icon="user"
+                    iconVariant="solid"
+                />
+            </flux:tooltip>
         @else
-            <flux:button
-                variant="subtle"
-                href="{{ route('login') }}"
-                icon="arrow-right-end-on-rectangle"
-                iconVariant="solid"
-            />
+            <flux:tooltip content="Masuk">
+                <flux:button
+                    variant="subtle"
+                    href="{{ route('login') }}"
+                    icon="arrow-right-end-on-rectangle"
+                    iconVariant="solid"
+                />
+            </flux:tooltip>
         @endauth
     </flux:navbar>
 </flux:header>

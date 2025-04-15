@@ -1,6 +1,6 @@
 <x-layouts>
     <x-cta />
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <a href="{{ route('public.animes.index') }}">
             <x-cards class="group relative overflow-hidden !p-0">
                 <img
@@ -81,7 +81,7 @@
                 </flux:heading>
             </x-cards>
         </a>
-        <a href="">
+        {{-- <a href="">
             <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/wibunity.jpg') }}"
@@ -120,6 +120,6 @@
                     Menu Lain
                 </flux:heading>
             </x-cards>
-        </a>
+        </a> --}}
     </div>
 </x-layouts>
