@@ -21,17 +21,12 @@
     </flux:breadcrumbs>
 
     <div class="flex flex-col gap-4">
-        <div class="flex flex-col">
-            <flux:text>
-                {{ $news['published_at'] }}
-            </flux:text>
-            <flux:heading
-                size="lg"
-                class="!font-bold"
-            >
-                {{ $news['title'] }}
-            </flux:heading>
-        </div>
+        <flux:heading
+            size="lg"
+            class="!font-bold"
+        >
+            {{ $news['title'] }}
+        </flux:heading>
         <x-cards>
             <article class="prose dark:prose-invert lg:max-w-3/4">
                 {!! $news['description'] !!}

@@ -3,11 +3,6 @@
     stashable
     class="w-full border-zinc-200 bg-zinc-50 lg:border-r dark:border-zinc-600 dark:bg-zinc-900"
 >
-    <flux:sidebar.toggle
-        class="lg:hidden"
-        icon="x-mark"
-    />
-
     <flux:brand
         href="{{ route('public.home.index') }}"
         name="{{ config('app.name') }}"
@@ -91,22 +86,31 @@
 
     <flux:spacer />
 
-    <flux:radio.group
-        x-data
-        variant="segmented"
-        x-model="$flux.appearance"
-    >
-        <flux:radio
-            value="light"
-            icon="sun"
+    <flux:separator />
+
+    <div class="flex flex-col gap-4">
+        <flux:radio.group
+            x-data
+            variant="segmented"
+            x-model="$flux.appearance"
+        >
+            <flux:radio
+                value="light"
+                icon="sun"
+            />
+            <flux:radio
+                value="dark"
+                icon="moon"
+            />
+            <flux:radio
+                value="system"
+                icon="computer-desktop"
+            />
+        </flux:radio.group>
+
+        <flux:sidebar.toggle
+            class="w-full lg:hidden"
+            icon="x-mark"
         />
-        <flux:radio
-            value="dark"
-            icon="moon"
-        />
-        <flux:radio
-            value="system"
-            icon="computer-desktop"
-        />
-    </flux:radio.group>
+    </div>
 </flux:sidebar>

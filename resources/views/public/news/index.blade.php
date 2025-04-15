@@ -18,7 +18,7 @@
         >
             Berita Terbaru
         </flux:heading>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
             @foreach ($news as $newsData)
                 <a href="{{ route('public.news.show', ['news' => $newsData['id']]) }}">
                     <x-cards class="group overflow-hidden !p-0">

@@ -1,4 +1,4 @@
-<footer class="mt-auto">
+<footer class="mb-16 mt-auto lg:mb-0">
     <x-cards>
         <div class="flex flex-col gap-2">
             <div class="flex flex-row items-center gap-2">
