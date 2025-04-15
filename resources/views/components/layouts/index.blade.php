@@ -53,6 +53,12 @@
             href="{{ asset('favicon-32x32.png') }}"
         />
 
+        <!-- Manifest for PWA -->
+        <link
+            rel="manifest"
+            href="{{ asset('manifest.json') }}"
+        />
+
         <!-- Fonts -->
         <link
             rel="preconnect"
