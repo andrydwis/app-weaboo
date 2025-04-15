@@ -70,7 +70,7 @@
 <flux:header
     class="min-md:!hidden fixed bottom-0 left-0 !z-[15] w-full border-t border-zinc-200 bg-white dark:border-zinc-600 dark:bg-zinc-900"
 >
-    <flux:navbar class="w-full justify-evenly">
+    <flux:navbar class="w-full justify-between">
         <flux:sidebar.toggle
             icon="bars-3"
             iconVariant="solid"
@@ -82,20 +82,23 @@
                 iconVariant="solid"
             />
         </flux:modal.trigger>
-        @auth
-            <flux:button
-                variant="subtle"
-                href="{{ route('public.profile.edit') }}"
-                icon="user"
-                iconVariant="solid"
-            />
-        @else
-            <flux:button
-                variant="subtle"
-                href="{{ route('login') }}"
-                icon="arrow-right-end-on-rectangle"
-                iconVariant="solid"
-            />
-        @endauth
+        <flux:button
+            variant="subtle"
+            href="{{ route('public.animes.index') }}"
+            icon="play-circle"
+            iconVariant="solid"
+        />
+        <flux:button
+            variant="subtle"
+            href="{{ route('public.mangas.index') }}"
+            icon="book-open"
+            iconVariant="solid"
+        />
+        <flux:button
+            variant="subtle"
+            href="{{ route('public.ai.chat.index') }}"
+            icon="sparkles"
+            iconVariant="solid"
+        />
     </flux:navbar>
 </flux:header>
