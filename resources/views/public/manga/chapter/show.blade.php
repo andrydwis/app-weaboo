@@ -29,7 +29,7 @@
     </flux:breadcrumbs>
 
     <x-cards
-        class="sm:top-15 sm:!border-1 !border-t-1 !fixed bottom-0 z-10 -mx-6 w-full !rounded-none !border-0 sm:!sticky sm:!mx-0 sm:!rounded-xl dark:!bg-zinc-900"
+        class="sm:top-15 sm:!border-1 !border-t-1 !fixed bottom-14 z-10 -mx-6 w-full !rounded-none !border-0 sm:!sticky sm:!mx-0 sm:!rounded-xl dark:!bg-zinc-900"
     >
         <div class="flex w-full flex-row items-center gap-2 lg:grid lg:grid-cols-3">
             <flux:button
