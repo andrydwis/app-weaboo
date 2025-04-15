@@ -21,6 +21,43 @@
             href="{{ asset('favicon.ico') }}"
             type="image/x-icon"
         >
+        <!-- High-Resolution Icons for PWA -->
+        <link
+            rel="apple-touch-icon"
+            href="{{ asset('apple-touch-icon.png') }}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="{{ asset('android-chrome-192x192.png') }}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="{{ asset('android-chrome-512x512.png') }}"
+        />
+
+        <!-- Smaller Icons for Legacy Browsers -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="{{ asset('favicon-16x16.png') }}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{{ asset('favicon-32x32.png') }}"
+        />
+
+        <!-- Manifest for PWA -->
+        <link
+            rel="manifest"
+            href="{{ asset('manifest.json') }}"
+        />
 
         <!-- Fonts -->
         <link
