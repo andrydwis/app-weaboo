@@ -108,7 +108,7 @@
         @if (!$keywords)
             <meta
                 name="keywords"
-                content="nonton anime, komunitas wibu, anime gratis, anime terbaru, manga gratis, manga terbaru, manga indonesia,berita anime, weaboo, anime indonesia, streaming anime, forum wibu, anime terbaik"
+                content="anime, manga, nonton anime, komunitas wibu, anime gratis, anime terbaru, manga gratis, manga terbaru, manga indonesia,berita anime, weaboo, anime indonesia, streaming anime, forum wibu, anime terbaik"
             >
         @else
             <meta
@@ -120,10 +120,6 @@
             name="robots"
             content="index, follow"
         />
-        <meta
-            name="revisit-after"
-            content="1"
-        >
 
         <!-- Open Graph / Facebook -->
         <meta
