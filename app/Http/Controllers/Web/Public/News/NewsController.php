@@ -23,6 +23,10 @@ class NewsController extends Controller
     {
         $news = Http::get(config('services.weaboo.api_url').'/news/'.$news, [])->json();
 
+        if (! $news) {
+            abort(404);
+        }
+
         $data = [
             'news' => $news,
         ];

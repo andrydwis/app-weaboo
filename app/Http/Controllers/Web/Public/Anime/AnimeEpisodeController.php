@@ -15,8 +15,16 @@ class AnimeEpisodeController extends Controller
         $anime = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
         ])->json();
 
+        if (! $anime) {
+            abort(404);
+        }
+
         $episode = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime['id'].'/episodes/'.$episode, [
         ])->json();
+
+        if (! $episode) {
+            abort(404);
+        }
 
         if (Auth::check()) {
             // update or create history

@@ -36,6 +36,10 @@ class MangaController extends Controller
         $manga = Http::get(config('services.weaboo.api_url').'/manga/'.$manga, [
         ])->json();
 
+        if (! $manga) {
+            abort(404);
+        }
+
         if (Auth::check()) {
             $histories = MangaChapterHistory::where('user_id', Auth::id())
                 ->where('manga_id', $manga['id'])

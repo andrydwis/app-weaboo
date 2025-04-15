@@ -15,8 +15,16 @@ class MangaChapterController extends Controller
         $manga = Http::get(config('services.weaboo.api_url').'/manga/'.$manga, [
         ])->json();
 
+        if (! $manga) {
+            abort(404);
+        }
+
         $chapter = Http::get(config('services.weaboo.api_url').'/manga/'.$manga['id'].'/chapters/'.$chapter, [
         ])->json();
+
+        if (! $chapter) {
+            abort(404);
+        }
 
         $chapters = $manga['chapters'];
         $chapterIndex = array_search($chapter['id'], array_column($chapters, 'id'));
