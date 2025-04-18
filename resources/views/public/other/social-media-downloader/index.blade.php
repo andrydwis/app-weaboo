@@ -1,4 +1,7 @@
-<x-layouts title="Social Media Downloader">
+<x-layouts
+    title="Social Media Downloader"
+    :withFooter="false"
+>
     <flux:breadcrumbs>
         <flux:breadcrumbs.item
             href="{{ route('public.home.index') }}"

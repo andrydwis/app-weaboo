@@ -44,11 +44,12 @@
             clearable
         />
         <div class="flex flex-row items-center justify-end gap-2">
-            <flux:button wire:click="resetChat">
+            <flux:button icon="arrow-path" wire:click="resetChat">
                 Reset
             </flux:button>
             <flux:button
                 variant="primary"
+                icon="paper-airplane"
                 wire:click="send"
             >
                 Kirim

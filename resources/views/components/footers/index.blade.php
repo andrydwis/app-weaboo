@@ -12,7 +12,7 @@
                 />
             </div>
             <flux:text class="lg:w-1/2">
-                Weaboo.my.id tidak menyimpan file apa pun di server kami. Kami hanya
+                Weaboonesia tidak menyimpan file apa pun di server kami. Kami hanya
                 menyediakan tautan ke media yang dihosting oleh layanan pihak ketiga.
             </flux:text>
             <div class="flex flex-row flex-wrap items-center gap-2">

@@ -72,22 +72,22 @@
         <!-- Primary Meta Tags -->
         @if (!$title)
             <title>
-                Weaboo.my.id - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan
+                Weaboonesia - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan
                 Berita Terbaru
                 Seputar Anime
             </title>
 
             <meta
                 name="title"
-                content="Weaboo.my.id - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
+                content="Weaboonesia - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
             />
         @else
             <title>
-                Weaboo.my.id - {{ $title }}
+                Weaboonesia - {{ $title }}
             </title>
             <meta
                 name="title"
-                content="Weaboo.my.id - {{ $title }}"
+                content="Weaboonesia - {{ $title }}"
             />
         @endif
         <link
@@ -97,7 +97,7 @@
         @if (!$description)
             <meta
                 name="description"
-                content="Weaboo.my.id, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
+                content="Weaboonesia, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
             />
         @else
             <meta
@@ -133,18 +133,18 @@
         @if (!$title)
             <meta
                 property="og:title"
-                content="Weaboo.my.id - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
+                content="Weaboonesia - Nonton Anime dan Baca Manga Gratis, Komunitas Wibu, dan Berita Terbaru Seputar Anime"
             />
         @else
             <meta
                 property="og:title"
-                content="Weaboo.my.id - {{ $title }}"
+                content="Weaboonesia - {{ $title }}"
             />
         @endif
         @if (!$description)
             <meta
                 property="og:description"
-                content="Weaboo.my.id, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
+                content="Weaboonesia, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
             />
         @else
             <meta
@@ -176,18 +176,18 @@
         @if (!$title)
             <meta
                 property="twitter:title"
-                content="Weaboo.my.id - Nonton Anime dan Baca Manga Gratis dan Tanpa Iklan"
+                content="Weaboonesia - Nonton Anime dan Baca Manga Gratis dan Tanpa Iklan"
             />
         @else
             <meta
                 property="twitter:title"
-                content="Weaboo.my.id - {{ $title }}"
+                content="Weaboonesia - {{ $title }}"
             />
         @endif
         @if (!$description)
             <meta
                 property="twitter:description"
-                content="Weaboo.my.id, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
+                content="Weaboonesia, tempat nonton anime dan baca manga gratis tanpa iklan, bergabung dengan komunitas pecinta anime, dan update berita terkini. Cari anime favoritmu di sini!"
             />
         @else
             <meta

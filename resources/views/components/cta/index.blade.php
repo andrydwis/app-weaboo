@@ -20,7 +20,7 @@
             class="z-50 text-center text-2xl !font-bold !text-white lg:text-4xl"
         >
             Nonton Anime dan Baca Manga <span class="underline">Tanpa Iklan</span>
-            Cuma di Weaboo.my.id
+            Cuma di Weaboonesia
         </flux:heading>
         <flux:modal.trigger name="search">
             <flux:input
