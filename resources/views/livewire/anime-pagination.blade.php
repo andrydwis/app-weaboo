@@ -46,8 +46,7 @@
             />
         @endforeach
         @if (!empty($pagination))
-            <div
-                class="col-span-2 grid grid-cols-2 gap-2 lg:col-span-5 lg:hidden">
+            <div class="col-span-2 grid grid-cols-2 gap-2 lg:col-span-5 lg:hidden">
                 <flux:button
                     :disabled="!$pagination['has_prev_page']"
                     icon="chevron-left"
@@ -66,15 +65,3 @@
         @endif
     </div>
 </div>
-
-@script
-    <script>
-        $wire.on('anime-pagination-loaded', () => {
-            //scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-        });
-    </script>
-@endscript

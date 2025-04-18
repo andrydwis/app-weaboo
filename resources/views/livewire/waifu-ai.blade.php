@@ -10,6 +10,13 @@
     >
         @forelse ($messages as $message)
             @if ($message['role'] == 'user')
+                @if (isset($message['preview']))
+                    <img
+                        src="{{ $message['preview'] }}"
+                        alt="thumbnail"
+                        class="md:max-w-1/6 max-w-1/3 ml-auto aspect-square rounded-xl object-cover"
+                    >
+                @endif
                 <x-cards class="md:max-w-1/3 ml-auto max-w-full rounded-br-none">
                     <flux:text>
                         {{ $message['content'] }}
@@ -40,17 +47,29 @@
             placeholder="Tulis pesan..."
             wire:keydown.enter="send"
             wire:loading.attr="disabled"
-            wire:target="send"
-            clearable
+            wire:target="send, file"
+        />
+        <flux:input
+            type="file"
+            wire:model.live="file"
+            wire:loading.attr="disabled"
+            wire:target="send, file"
         />
         <div class="flex flex-row items-center justify-end gap-2">
-            <flux:button icon="arrow-path" wire:click="resetChat">
+            <flux:button
+                icon="arrow-path"
+                wire:click="resetChat"
+                wire:loading.attr="disabled"
+                wire:target="send, file"
+            >
                 Reset
             </flux:button>
             <flux:button
                 variant="primary"
                 icon="paper-airplane"
                 wire:click="send"
+                wire:loading.attr="disabled"
+                wire:target="send, file"
             >
                 Kirim
             </flux:button>

@@ -11,9 +11,9 @@
         </flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
-    <livewire:manga-pagination type="popular" />
-
     <livewire:manga-pagination type="recent-update" />
+
+    <livewire:manga-pagination type="popular" />
 
     <div class="flex flex-col gap-4">
         <flux:heading

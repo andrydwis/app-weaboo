@@ -37,8 +37,6 @@ class MangaPagination extends Component
         }
 
         $this->mangas = $mangas;
-
-        $this->dispatch('manga-pagination-loaded');
     }
 
     public function nextPage(): void

@@ -39,8 +39,6 @@ class AnimePagination extends Component
 
         $this->animes = $animes['animes'];
         $this->pagination = $animes['pagination'];
-
-        $this->dispatch('anime-pagination-loaded');
     }
 
     public function nextPage(): void
