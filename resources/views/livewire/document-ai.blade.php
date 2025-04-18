@@ -1,26 +1,25 @@
 <x-cards class="relative flex h-full max-h-[80vh] flex-col gap-4">
-    <img
-        src="{{ asset('images/cta/midori.png') }}"
-        alt="midori"
-        class="grayscale-80 absolute bottom-0 left-1/2 z-[2] h-2/3 -translate-x-1/2 object-contain opacity-20"
-    >
     <div
         id="chat-container"
         class="z-[3] flex h-full flex-col gap-4 overflow-auto md:pr-2"
     >
         @forelse ($messages as $message)
             @if ($message['role'] == 'user')
-                @if (isset($message['preview']))
-                    <img
-                        src="{{ $message['preview'] }}"
-                        alt="thumbnail"
-                        class="md:max-w-1/6 max-w-1/3 ml-auto aspect-square rounded-xl object-cover"
-                    >
-                @endif
                 <x-cards class="md:max-w-1/3 ml-auto max-w-full rounded-br-none">
-                    <flux:text>
-                        {{ $message['content'] }}
-                    </flux:text>
+                    <div class="flex flex-col gap-2">
+                        <flux:text>
+                            {{ $message['content'] }}
+                        </flux:text>
+                        @if (isset($message['preview']))
+                            <flux:button
+                                icon="eye"
+                                target="_blank"
+                                href="{{ $message['preview'] }}"
+                            >
+                                Lihat Dokumen
+                            </flux:button>
+                        @endif
+                    </div>
                 </x-cards>
             @else
                 <x-cards class="md:max-w-1/3 max-w-full rounded-bl-none">
@@ -30,10 +29,10 @@
                 </x-cards>
             @endif
         @empty
-            <x-cards class="md:max-w-1/3 max-w-full rounded-bl-none">
+            <x-cards class="md:max-w-1/3 flex max-w-full flex-col gap-2 rounded-bl-none">
                 <flux:text>
-                    Halooo! Midori Nee-san di sini, siap menemani dan membantu
-                    kamu.
+                    Silahkan upload dokumen, kamu bisa merangkum, meringkas, atau
+                    menjawab pertanyaan terkait dokumen yang kamu upload.
                 </flux:text>
             </x-cards>
         @endforelse
@@ -50,7 +49,7 @@
             rows="2"
             resize="none"
             wire:model="message"
-            placeholder="Tulis pesan..."
+            placeholder="Tolong rangkum isi dokumen ini..."
             wire:keydown.enter="send"
             wire:loading.attr="disabled"
             wire:target="send, file"
@@ -62,7 +61,7 @@
             wire:loading.attr="disabled"
             wire:target="send, file"
             class="hidden"
-            accept="image/*"
+            accept="image/*,application/pdf"
         />
         <div class="flex flex-row items-center justify-end gap-2">
             <flux:button

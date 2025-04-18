@@ -41,7 +41,7 @@
                 </flux:heading>
             </x-cards>
         </a>
-        <a href="{{ route('public.ai.chat.index') }}">
+        <a href="{{ route('public.ai.chat.waifu.index') }}">
             <x-cards class="group relative overflow-hidden !p-0">
                 <img
                     src="{{ asset('images/cta/ai.jpg') }}"

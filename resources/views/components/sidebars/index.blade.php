@@ -21,20 +21,31 @@
         </flux:navlist.item>
 
         <flux:navlist.item
-            icon="sparkles"
-            iconVariant="solid"
-            href="{{ route('public.ai.chat.index') }}"
-        >
-            Waifu AI
-        </flux:navlist.item>
-
-        <flux:navlist.item
             icon="newspaper"
             iconVariant="solid"
             href="{{ route('public.news.index') }}"
         >
             Berita Terbaru
         </flux:navlist.item>
+
+        <flux:separator />
+
+        <flux:navlist.group heading="AI">
+            <flux:navlist.item
+                icon="sparkles"
+                iconVariant="solid"
+                href="{{ route('public.ai.chat.waifu.index') }}"
+            >
+                Waifu AI
+            </flux:navlist.item>
+            <flux:navlist.item
+                icon="document-text"
+                iconVariant="solid"
+                href="{{ route('public.ai.chat.document.index') }}"
+            >
+                Document AI
+            </flux:navlist.item>
+        </flux:navlist.group>
 
         <flux:separator />
 

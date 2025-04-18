@@ -1,4 +1,7 @@
-<x-layouts title="Waifu AI" :withFooter="false">
+<x-layouts
+    title="Document AI"
+    :withFooter="false"
+>
     <flux:breadcrumbs>
         <flux:breadcrumbs.item
             href="{{ route('public.home.index') }}"
@@ -6,10 +9,10 @@
         />
         <flux:breadcrumbs.item>
             <span class="line-clamp-1 whitespace-nowrap">
-                Waifu AI
+                Document AI
             </span>
         </flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
-    <livewire:waifu-ai />
+    <livewire:document-ai />
 </x-layouts>

@@ -96,7 +96,7 @@
         />
         <flux:button
             variant="subtle"
-            href="{{ route('public.ai.chat.index') }}"
+            href="{{ route('public.ai.chat.waifu.index') }}"
             icon="sparkles"
             iconVariant="solid"
         />

@@ -29,8 +29,9 @@ Route::name('public.')->group(function () {
     Route::get('/news/{news}', [App\Http\Controllers\Web\Public\News\NewsController::class, 'show'])->name('news.show');
 
     // AI Chat
-    Route::prefix('ai')->name('ai.')->group(function () {
-        Route::get('/chat', [App\Http\Controllers\Web\Public\Ai\Chat\ChatController::class, 'index'])->name('chat.index')->middleware('auth');
+    Route::prefix('ai')->name('ai.')->middleware('auth')->group(function () {
+        Route::get('/chat/waifu', [App\Http\Controllers\Web\Public\Ai\Chat\WaifuController::class, 'index'])->name('chat.waifu.index');
+        Route::get('/chat/document', [App\Http\Controllers\Web\Public\Ai\Chat\DocumentController::class, 'index'])->name('chat.document.index');
     });
 
     Route::prefix('other')->name('other.')->group(function () {

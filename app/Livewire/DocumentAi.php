@@ -3,27 +3,26 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Http;
-use Illuminate\View\View;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class WaifuAi extends Component
+class DocumentAi extends Component
 {
     use WithFileUploads;
 
     public $messages = [];
 
-    #[Validate('nullable|mimes:jpg,jpeg,png,gif|max:4096')]
+    #[Validate('nullable|mimes:jpg,jpeg,png,pdf|max:4096')]
     public $file;
 
     public string $fileName = '';
 
     public $message = '';
 
-    public function render(): View
+    public function render()
     {
-        return view('livewire.waifu-ai');
+        return view('livewire.document-ai');
     }
 
     public function send(): void
@@ -48,14 +47,14 @@ class WaifuAi extends Component
 
         $this->reset(['message', 'file', 'fileName']);
 
-        $this->askWaifuAi();
+        $this->ask();
 
         $this->dispatch('messages-updated');
     }
 
-    public function askWaifuAi(): void
+    public function ask(): void
     {
-        $response = Http::withHeaders(['API-Key' => config('services.weaboo.api_key')])->post(config('services.weaboo.api_url').'/ai/chat/waifu', $this->messages)->json();
+        $response = Http::withHeaders(['API-Key' => config('services.weaboo.api_key')])->post(config('services.weaboo.api_url').'/ai/chat/document', $this->messages)->json();
 
         $this->messages[] = [
             'role' => $response['role'],
