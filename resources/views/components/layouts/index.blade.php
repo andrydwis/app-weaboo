@@ -211,6 +211,14 @@
 
         @livewireStyles
         @fluxAppearance
+
+        <head>
+            <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/white/pace-theme-minimal.css"
+            >
+        </head>
         @stack('styles')
     </head>
 
