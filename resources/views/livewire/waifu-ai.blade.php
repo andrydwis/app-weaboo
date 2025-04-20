@@ -1,6 +1,6 @@
 <x-cards class="relative flex h-full max-h-[80vh] flex-col gap-4">
     <img
-        src="{{ asset('images/cta/midori.png') }}"
+        src="{{ asset('images/cta/midori.webp') }}"
         alt="midori"
         class="grayscale-80 absolute bottom-0 left-1/2 z-[2] h-2/3 -translate-x-1/2 object-contain opacity-20"
     >

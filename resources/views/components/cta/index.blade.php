@@ -1,7 +1,7 @@
 <div class="relative -mx-6 md:mx-0">
     <div
         class="grayscale-50 flex min-h-[50vh] w-full brightness-50 md:min-h-[75vh]"
-        style="background: url('{{ asset('images/cta/home.jpg') }}') no-repeat center center; background-size: cover;"
+        style="background: url('{{ asset('images/cta/home.webp') }}') no-repeat center center; background-size: cover;"
     >
     </div>
     <div
