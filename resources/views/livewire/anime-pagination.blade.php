@@ -24,7 +24,7 @@
                 </flux:button>
                 <flux:button
                     :disabled="!$pagination['has_next_page']"
-                    icon="chevron-right"
+                    iconTrailing="chevron-right"
                     wire:click="nextPage"
                 >
                     Selanjutnya
@@ -56,7 +56,7 @@
                 </flux:button>
                 <flux:button
                     :disabled="!$pagination['has_next_page']"
-                    icon="chevron-right"
+                    iconTrailing="chevron-right"
                     wire:click="nextPage"
                 >
                     Selanjutnya

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Public\Anime;
 use App\Http\Controllers\Controller;
 use App\Models\AnimeEpisodeHistory;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 
@@ -33,8 +34,10 @@ class AnimeController extends Controller
 
     public function show(string $anime): View
     {
-        $anime = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
-        ])->json();
+        $anime = Cache::remember('anime-'.$anime, 3600, function () use ($anime) {
+            return Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
+            ])->json();
+        });
 
         if (! $anime) {
             abort(404);

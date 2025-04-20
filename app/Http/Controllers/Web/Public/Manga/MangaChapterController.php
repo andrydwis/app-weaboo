@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Public\Manga;
 use App\Http\Controllers\Controller;
 use App\Models\MangaChapterHistory;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 
@@ -12,15 +13,19 @@ class MangaChapterController extends Controller
 {
     public function show(string $manga, string $chapter): View
     {
-        $manga = Http::get(config('services.weaboo.api_url').'/manga/'.$manga, [
-        ])->json();
+        $manga = Cache::remember('manga-'.$manga, 3600, function () use ($manga) {
+            return Http::get(config('services.weaboo.api_url').'/manga/'.$manga, [
+            ])->json();
+        });
 
         if (! $manga) {
             abort(404);
         }
 
-        $chapter = Http::get(config('services.weaboo.api_url').'/manga/'.$manga['id'].'/chapters/'.$chapter, [
-        ])->json();
+        $chapter = Cache::remember('manga-'.$manga['id'].'-chapter-'.$chapter, 3600, function () use ($manga, $chapter) {
+            return Http::get(config('services.weaboo.api_url').'/manga/'.$manga['id'].'/chapters/'.$chapter, [
+            ])->json();
+        });
 
         if (! $chapter) {
             abort(404);

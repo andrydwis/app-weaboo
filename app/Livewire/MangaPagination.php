@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
@@ -23,17 +24,23 @@ class MangaPagination extends Component
     public function getMangaPaginationData(): void
     {
         if ($this->type === 'popular') {
-            $mangas = Http::get(config('services.weaboo.api_url').'/manga/popular', [
-                'page' => $this->page,
-            ])->json();
+            $mangas = Cache::remember('popular-mangas-'.$this->page, 3600, function () {
+                return Http::get(config('services.weaboo.api_url').'/manga/popular', [
+                    'page' => $this->page,
+                ])->json();
+            });
         } elseif ($this->type === 'recent-update') {
-            $mangas = Http::get(config('services.weaboo.api_url').'/manga/recent', [
-                'page' => $this->page,
-            ])->json();
+            $mangas = Cache::remember('recent-mangas-'.$this->page, 3600, function () {
+                return Http::get(config('services.weaboo.api_url').'/manga/recent', [
+                    'page' => $this->page,
+                ])->json();
+            });
         } elseif ($this->type === 'genre') {
-            $mangas = Http::get(config('services.weaboo.api_url').'/manga/genres/'.$this->genre, [
-                'page' => $this->page,
-            ])->json();
+            $mangas = Cache::remember('genre-mangas-'.$this->genre.'-'.$this->page, 3600, function () {
+                return Http::get(config('services.weaboo.api_url').'/manga/genres/'.$this->genre, [
+                    'page' => $this->page,
+                ])->json();
+            });
         }
 
         $this->mangas = $mangas;

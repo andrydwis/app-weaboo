@@ -28,7 +28,7 @@
             {{ $news['title'] }}
         </flux:heading>
         <x-cards>
-            <article class="prose dark:prose-invert lg:max-w-3/4">
+            <article class="prose dark:prose-invert lg:max-w-3/4 mx-auto">
                 {!! $news['description'] !!}
             </article>
         </x-cards>
