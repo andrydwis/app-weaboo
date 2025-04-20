@@ -105,7 +105,7 @@
             </x-cards>
         </a>
         <a
-            href="https://trakteer.id/weaboonesia"
+            href="https://buylink.id/weaboonesia"
             target="_blank"
         >
             <x-cards class="group relative overflow-hidden !p-0">
@@ -119,8 +119,11 @@
                     size="lg"
                     class="pointer-events-none absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-row items-center gap-2 text-center !font-bold text-white"
                 >
-                    <flux:icon.coffee class="size-6" />
-                    Support
+                    <flux:icon.shopping-cart
+                        variant="solid"
+                        class="size-6"
+                    />
+                    WeabooStore
                 </flux:heading>
             </x-cards>
         </a>
