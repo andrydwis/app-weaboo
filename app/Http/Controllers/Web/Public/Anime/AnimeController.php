@@ -13,8 +13,10 @@ class AnimeController extends Controller
 {
     public function index(): View
     {
-        $genres = Http::get(config('services.weaboo.api_url').'/samehadaku/anime/genres', [
-        ])->json();
+        $genres = Cache::remember('genres', 3600, function () {
+            return Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/genres', [
+            ])->json();
+        });
 
         $data = [
             'genres' => $genres,
@@ -35,7 +37,7 @@ class AnimeController extends Controller
     public function show(string $anime): View
     {
         $anime = Cache::remember('anime-'.$anime, 3600, function () use ($anime) {
-            return Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
+            return Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/'.$anime, [
             ])->json();
         });
 

@@ -14,7 +14,7 @@ class AnimeEpisodeController extends Controller
     public function show(string $anime, string $episode): View
     {
         $anime = Cache::remember('anime-'.$anime, 3600, function () use ($anime) {
-            return Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime, [
+            return Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/'.$anime, [
             ])->json();
         });
 
@@ -23,7 +23,7 @@ class AnimeEpisodeController extends Controller
         }
 
         $episode = Cache::remember('anime-'.$anime['id'].'-episode-'.$episode, 3600, function () use ($anime, $episode) {
-            return Http::get(config('services.weaboo.api_url').'/samehadaku/anime/'.$anime['id'].'/episodes/'.$episode, [
+            return Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/'.$anime['id'].'/episodes/'.$episode, [
             ])->json();
         });
 

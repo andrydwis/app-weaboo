@@ -30,13 +30,13 @@ class AnimePagination extends Component
     {
         if ($this->type === 'ongoing') {
             $animes = Cache::remember('ongoing-animes-'.$this->page, 3600, function () {
-                return Http::get(config('services.weaboo.api_url').'/samehadaku/anime/ongoing', [
+                return Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/ongoing', [
                     'page' => $this->page,
                 ])->json();
             });
         } elseif ($this->type === 'genre') {
             $animes = Cache::remember('genre-animes-'.$this->genre.'-'.$this->page, 3600, function () {
-                return Http::get(config('services.weaboo.api_url').'/samehadaku/anime/genres/'.$this->genre, [
+                return Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/genres/'.$this->genre, [
                     'page' => $this->page,
                 ])->json();
             });
