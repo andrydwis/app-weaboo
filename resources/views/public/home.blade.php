@@ -105,7 +105,7 @@
             </x-cards>
         </a>
         <a
-            href="https://buylink.id/weaboonesia"
+            href="{{ route('public.store') }}"
             target="_blank"
         >
             <x-cards class="group relative overflow-hidden !p-0">

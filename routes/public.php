@@ -37,4 +37,8 @@ Route::name('public.')->group(function () {
     Route::prefix('other')->name('other.')->group(function () {
         Route::get('/social-media-downloader', [App\Http\Controllers\Web\Public\Other\SocialMediaDownloaderController::class, 'index'])->name('social-media-downloader.index');
     });
+
+    Route::get('/store', function () {
+        return redirect('https://buylink.id/weaboonesia');
+    })->name('store');
 });
