@@ -14,10 +14,12 @@ class WaifuAi extends Component
 
     public $messages = [];
 
-    #[Validate('nullable|mimes:jpg,jpeg,png,gif|max:4096')]
+    #[Validate('nullable|mimes:jpg,jpeg,png|max:4096')]
     public $file;
 
     public string $fileName = '';
+
+    public string $originalFileName = '';
 
     public $message = '';
 
@@ -66,10 +68,14 @@ class WaifuAi extends Component
     public function resetChat(): void
     {
         $this->messages = [];
+
+        $this->reset(['message', 'file', 'fileName', 'originalFileName']);
     }
 
     public function updatedFile(): void
     {
+        $this->originalFileName = $this->file->getClientOriginalName();
+
         $response = Http::withHeaders(['API-Key' => config('services.weaboo.api_key')])->attach('file', file_get_contents($this->file->getRealPath()), $this->file->getClientOriginalName())->post(config('services.weaboo.api_url').'/ai/upload')->json();
 
         $this->fileName = $response['name'];

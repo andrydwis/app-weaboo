@@ -1,25 +1,14 @@
 <x-cards class="relative flex h-full max-h-[80vh] flex-col gap-4">
     <div
         id="chat-container"
-        class="z-[3] flex h-full flex-col gap-4 overflow-auto md:pr-2"
+        class="flex h-full flex-col gap-4 overflow-auto md:pr-2"
     >
         @forelse ($messages as $message)
             @if ($message['role'] == 'user')
                 <x-cards class="md:max-w-1/3 ml-auto max-w-full rounded-br-none">
-                    <div class="flex flex-col gap-2">
-                        <flux:text>
-                            {{ $message['content'] }}
-                        </flux:text>
-                        @if (isset($message['preview']))
-                            <flux:button
-                                icon="eye"
-                                target="_blank"
-                                href="{{ $message['preview'] }}"
-                            >
-                                Lihat Dokumen
-                            </flux:button>
-                        @endif
-                    </div>
+                    <flux:text>
+                        {{ $message['content'] }}
+                    </flux:text>
                 </x-cards>
             @else
                 <x-cards class="md:max-w-1/3 max-w-full rounded-bl-none">
@@ -38,7 +27,17 @@
         @endforelse
     </div>
 
-    <div class="relative z-[3] flex flex-col gap-2">
+    @if ($this?->originalFileName)
+        <div class="flex flex-row">
+            <flux:badge
+                variant="pill"
+                size="sm"
+            >
+                {{ str($this?->originalFileName)->limit(20) }}
+            </flux:badge>
+        </div>
+    @endif
+    <div class="relative flex flex-col gap-2">
         <flux:icon.loading
             wire:loading
             wire:target="send, file"

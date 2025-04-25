@@ -17,14 +17,14 @@
             <div class="hidden flex-row items-center justify-center gap-2 lg:flex">
                 <flux:button
                     :disabled="!$pagination['has_prev_page']"
-                    icon="chevron-left"
+                    :icon="!$pagination['has_prev_page'] ? 'no-symbol' : 'chevron-left'"
                     wire:click="prevPage"
                 >
                     Sebelumnya
                 </flux:button>
                 <flux:button
                     :disabled="!$pagination['has_next_page']"
-                    iconTrailing="chevron-right"
+                    :icon="!$pagination['has_next_page'] ? 'no-symbol' : 'chevron-right'"
                     wire:click="nextPage"
                 >
                     Selanjutnya
@@ -49,14 +49,14 @@
             <div class="col-span-2 grid grid-cols-2 gap-2 lg:col-span-5 lg:hidden">
                 <flux:button
                     :disabled="!$pagination['has_prev_page']"
-                    icon="chevron-left"
+                    :icon="!$pagination['has_prev_page'] ? 'no-symbol' : 'chevron-left'"
                     wire:click="prevPage"
                 >
                     Sebelumnya
                 </flux:button>
                 <flux:button
                     :disabled="!$pagination['has_next_page']"
-                    iconTrailing="chevron-right"
+                    :iconTrailing="!$pagination['has_next_page'] ? 'no-symbol' : 'chevron-right'"
                     wire:click="nextPage"
                 >
                     Selanjutnya

@@ -18,14 +18,14 @@
         <div class="hidden flex-row items-center justify-center gap-2 lg:flex">
             <flux:button
                 :disabled="$page === 1"
-                icon="chevron-left"
+                :icon="$page === 1 ? 'no-symbol' : 'chevron-left'"
                 wire:click="prevPage"
             >
                 Sebelumnya
             </flux:button>
             <flux:button
                 :disabled="$page >= 10"
-                icon="chevron-right"
+                :iconTrailing="$page >= 10 ? 'no-symbol' : 'chevron-right'"
                 wire:click="nextPage"
             >
                 Selanjutnya
@@ -48,14 +48,14 @@
         <div class="col-span-2 grid grid-cols-2 gap-2 lg:col-span-5 lg:hidden">
             <flux:button
                 :disabled="$page === 1"
-                icon="chevron-left"
+                :icon="$page === 1 ? 'no-symbol' : 'chevron-left'"
                 wire:click="prevPage"
             >
                 Sebelumnya
             </flux:button>
             <flux:button
                 :disabled="$page >= 10"
-                icon="chevron-right"
+                :iconTrailing="$page >= 10 ? 'no-symbol' : 'chevron-right'"
                 wire:click="nextPage"
             >
                 Selanjutnya

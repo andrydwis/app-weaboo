@@ -39,6 +39,16 @@
         @endforelse
     </div>
 
+    @if ($this?->originalFileName)
+        <div class="z-[3] flex flex-row">
+            <flux:badge
+                variant="pill"
+                size="sm"
+            >
+                {{ str($this?->originalFileName)->limit(20) }}
+            </flux:badge>
+        </div>
+    @endif
     <div class="relative z-[3] flex flex-col gap-2">
         <flux:icon.loading
             wire:loading
