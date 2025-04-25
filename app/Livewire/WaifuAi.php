@@ -61,7 +61,8 @@ class WaifuAi extends Component
 
         $this->messages[] = [
             'role' => $response['role'],
-            'content' => $response['content'],
+            'content' => $response['content']['response'],
+            'sources' => $response['content']['sources'] ?? [],
         ];
     }
 

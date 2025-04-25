@@ -27,6 +27,24 @@
                     <flux:text>
                         {!! str()->markdown($message['content']) !!}
                     </flux:text>
+                    @if (isset($message['sources']))
+                        <flux:separator class="my-2" />
+                        <div class="flex flex-row flex-wrap gap-2">
+                            @foreach ($message['sources'] as $source)
+                                <a
+                                    terget="_blank"
+                                    href="{{ $source['link'] }}"
+                                >
+                                    <flux:badge
+                                        variant="pill"
+                                        size="sm"
+                                    >
+                                        {{ $source['title'] }}
+                                    </flux:badge>
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
                 </x-cards>
             @endif
         @empty
