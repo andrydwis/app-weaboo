@@ -91,6 +91,13 @@
             >
                 Social Media Downloader
             </flux:navlist.item>
+            <flux:navlist.item
+                icon="user"
+                iconVariant="solid"
+                href="{{ route('public.profile.edit') }}"
+            >
+                Profil
+            </flux:navlist.item>
         </flux:navlist.group>
 
     </flux:navlist>

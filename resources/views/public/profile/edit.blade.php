@@ -39,12 +39,6 @@
                             {{ $user?->email }}
                         </flux:text>
                     </div>
-                    <flux:badge
-                        size="sm"
-                        class="w-max"
-                    >
-                        {{ $user?->roles?->first()?->name }}
-                    </flux:badge>
                 </div>
             </div>
 

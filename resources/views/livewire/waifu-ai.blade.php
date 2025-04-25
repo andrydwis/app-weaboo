@@ -27,7 +27,7 @@
                     <flux:text>
                         {!! str()->markdown($message['content']) !!}
                     </flux:text>
-                    @if (isset($message['sources']))
+                    @if ($message['sources'])
                         <flux:separator class="my-2" />
                         <div class="flex flex-row flex-wrap gap-2">
                             @foreach ($message['sources'] as $source)
