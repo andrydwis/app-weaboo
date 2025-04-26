@@ -57,7 +57,7 @@
                         <flux:menu.group heading="{{ $quality }}">
                             @forelse ($servers as $server)
                                 <flux:menu.item
-                                    wire:click="fetchStreamUrl('{{ $server['id'] }}')"
+                                    wire:click="fetchStreamUrl('{{ $quality }}', '{{ $server['name'] }}', '{{ $server['id'] }}')"
                                 >
                                     {{ $server['name'] }}
                                 </flux:menu.item>
