@@ -64,6 +64,13 @@
             >
                 Watchlist
             </flux:navlist.item>
+            <flux:navlist.item
+                icon="calendar"
+                iconVariant="solid"
+                href="{{ route('public.animes.schedule.index') }}"
+            >
+                Jadwal Rilis
+            </flux:navlist.item>
         </flux:navlist.group>
 
         <flux:navlist.group heading="Manga">

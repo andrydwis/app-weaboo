@@ -83,11 +83,11 @@
             />
         @else
             <title>
-                Weaboonesia - {{ $title }}
+                {{ $title }} - Weaboonesia
             </title>
             <meta
                 name="title"
-                content="Weaboonesia - {{ $title }}"
+                content="{{ $title }} - Weaboonesia"
             />
         @endif
         <link
@@ -138,7 +138,7 @@
         @else
             <meta
                 property="og:title"
-                content="Weaboonesia - {{ $title }}"
+                content="{{ $title }} - Weaboonesia"
             />
         @endif
         @if (!$description)
@@ -181,7 +181,7 @@
         @else
             <meta
                 property="twitter:title"
-                content="Weaboonesia - {{ $title }}"
+                content="{{ $title }} - Weaboonesia"
             />
         @endif
         @if (!$description)
