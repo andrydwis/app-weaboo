@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -21,9 +22,9 @@ class AnimeWatchEpisode extends Component
 
     public ?string $nextEpisode = null;
 
-    public ?string $cachedQuality;
+    public string $cachedQuality = '';
 
-    public ?string $cachedServerName;
+    public string $cachedServerName = '';
 
     public function render(): View
     {
@@ -32,8 +33,10 @@ class AnimeWatchEpisode extends Component
 
     public function mount(): void
     {
-        $this->cachedQuality = Cache::get('quality');
-        $this->cachedServerName = Cache::get('server_name');
+        if (Auth::check()) {
+            $this->cachedQuality = Cache::get('quality-'.Auth::id(), '');
+            $this->cachedServerName = Cache::get('server-name-'.Auth::id(), '');
+        }
 
         if ($this->cachedQuality && $this->cachedServerName) {
             try {
@@ -58,7 +61,9 @@ class AnimeWatchEpisode extends Component
 
     public function fetchStreamUrl(string $quality, string $serverName, string $serverId): void
     {
-        $this->cacheServer($quality, $serverName);
+        if (Auth::check()) {
+            $this->cacheServer($quality, $serverName);
+        }
 
         try {
             $server = Http::get(config('services.weaboo.api_url').'/'.config('services.weaboo.anime_provider').'/anime/'.$this->anime['id'].'/servers/'.$serverId)->json();
@@ -72,13 +77,13 @@ class AnimeWatchEpisode extends Component
 
     public function cacheServer(string $quality, string $serverName): void
     {
-        Cache::forget('quality');
-        Cache::forget('server_name');
+        Cache::forget('quality-'.Auth::id());
+        Cache::forget('server-name-'.Auth::id());
 
-        $this->cachedQuality = Cache::remember('quality', 3600, function () use ($quality) {
+        $this->cachedQuality = Cache::remember('quality-'.Auth::id(), 3600, function () use ($quality) {
             return $quality;
         });
-        $this->cachedServerName = Cache::remember('server_name', 3600, function () use ($serverName) {
+        $this->cachedServerName = Cache::remember('server-name-'.Auth::id(), 3600, function () use ($serverName) {
             return $serverName;
         });
     }
