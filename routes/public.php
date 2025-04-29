@@ -7,8 +7,8 @@ Route::name('public.')->group(function () {
         return view('public.home');
     })->name('home.index');
 
-    Route::get('/profile', [App\Http\Controllers\Web\Public\Profile\ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [App\Http\Controllers\Web\Public\Profile\ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile', [App\Http\Controllers\Web\Public\Profile\ProfileController::class, 'edit'])->middleware('auth')->name('profile.edit');
+    Route::patch('/profile', [App\Http\Controllers\Web\Public\Profile\ProfileController::class, 'update'])->middleware('auth')->name('profile.update');
 
     // Anime
     Route::get('/animes', [App\Http\Controllers\Web\Public\Anime\AnimeController::class, 'index'])->name('animes.index');
