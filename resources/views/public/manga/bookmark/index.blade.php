@@ -23,7 +23,7 @@
         >
             Bookmark Manga
         </flux:heading>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
             @forelse ($bookmarks as $bookmark)
                 @php
                     $manga = $bookmark['data'];

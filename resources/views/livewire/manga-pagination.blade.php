@@ -32,7 +32,7 @@
             </flux:button>
         </div>
     </div>
-    <div class="grid grid-cols-2 gap-4 lg:grid-cols-5">
+    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
         @for ($i = 0; $i < 10; $i++)
             <x-cards.placeholder
                 wire:loading
