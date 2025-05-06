@@ -32,7 +32,7 @@
                         <div class="flex flex-row flex-wrap gap-2">
                             @foreach ($message['sources'] as $source)
                                 <a
-                                    terget="_blank"
+                                    target="_blank"
                                     href="{{ $source['link'] }}"
                                 >
                                     <flux:badge
